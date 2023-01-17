@@ -3231,12 +3231,12 @@
 }
 @media only screen and (max-width: 768px) {
   .album-title {
-    font-size: 38px;
+    font-size: 34px;
   }
 }
 @media only screen and (max-width: 576px) {
   .album-title {
-    font-size: 32px;
+    font-size: 28px;
   }
 }
 @media all, bookshop {
@@ -3251,9 +3251,14 @@
     align-self: flex-end;
   }
 }
+@media only screen and (max-width: 768px) {
+  .album-description {
+    font-size: 16px;
+  }
+}
 @media only screen and (max-width: 576px) {
   .album-description {
-    font-size: 20px;
+    font-size: 14px;
   }
 }
 @media all, bookshop {
@@ -5503,6 +5508,7 @@
 @media all, bookshop {
   .nav-container {
     max-width: 920px;
+    height: 60px;
     padding: 0 auto;
     margin: 0 auto;
   }
@@ -5510,11 +5516,13 @@
 @media only screen and (max-width: 768px) {
   .nav-container {
     max-width: 600px;
+    height: 45px;
   }
 }
 @media only screen and (max-width: 576px) {
   .nav-container {
     font-size: 400px;
+    height: 35px;
   }
 }
 @media all, bookshop {
@@ -5542,7 +5550,7 @@
 }
 @media only screen and (max-width: 576px) {
   .nav-container .nav-links .nav-link {
-    font-size: 25px;
+    font-size: 20px;
   }
 }
 @media all, bookshop {
