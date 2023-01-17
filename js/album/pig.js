@@ -316,6 +316,12 @@
        * @returns {Number} The minimum aspect ratio at this window width.
        */
       getMinAspectRatio: function(lastWindowWidth) {
+        // Narrow windows get an image after the other without grid, so the images can be seen better on phones.
+        if (window.innerWidth <= 768){
+          return 0.1;
+        }
+        
+        //Desktop
         if (lastWindowWidth <= 640) {
           return 1;
         } else if (lastWindowWidth <= 1280) {
