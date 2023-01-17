@@ -3219,7 +3219,7 @@
 }
 @media all, bookshop {
   .album-title {
-    width: 100%;
+    width: 90%;
     color: #fff;
     justify-content: center;
     z-index: 6; /* set above highest image container z-index */
