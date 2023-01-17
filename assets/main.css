@@ -2503,6 +2503,18 @@
     border-radius: 15px;
   }
 }
+@media only screen and (max-width: 768px) {
+  .logo__image {
+    max-height: 75px;
+    border-radius: 10px;
+  }
+}
+@media only screen and (max-width: 576px) {
+  .logo__image {
+    max-height: 60px;
+    border-radius: 10px;
+  }
+}
 @media all, bookshop {
   .main-nav {
     display: flex;
