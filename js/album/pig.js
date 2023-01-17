@@ -317,7 +317,7 @@
        */
       getMinAspectRatio: function(lastWindowWidth) {
         // Narrow windows get an image after the other without grid, so the images can be seen better on phones.
-        if (window.innerWidth <= 768){
+        if (window.innerWidth / window.innerHeight  <= 0.5){
           return 0.1;
         }
         
