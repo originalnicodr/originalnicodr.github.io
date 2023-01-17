@@ -3040,6 +3040,9 @@
     --scr-banner-anim-offset: calc(250ms * (var(--scr-banner-imgs-item-no) - 1));
     width: 100%;
     display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
     transform: skew(var(--scr-banner-skew)) translateX(calc(-1 * var(--scr-banner-offset-x)));
     margin: 0 -4px 0 0; /* Slight overlap to hide anti-aliased imprecise gaps */
     position: relative;
@@ -3059,9 +3062,6 @@
 }
 @media all, bookshop {
   .scr-banner-imgs-item div {
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
     height: var(--scr-banner-inner-height);
     animation: scr-banner-anim-slide-x-1 2s forwards var(--bezier-easeOutExpo) var(--scr-banner-anim-offset);
   }
