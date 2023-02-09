@@ -3009,7 +3009,7 @@
     --scr-banner-skew: -10deg;
     width: 90%;
     margin: 0 auto;
-    max-width: 3000px;
+    max-width: 1800px;
     height: 400px;
     background: #000;
     border-radius: 10px; /* optional rounded corners */
@@ -3039,9 +3039,6 @@
     --scr-banner-imgs-item-no: 1;
     --scr-banner-anim-offset: calc(250ms * (var(--scr-banner-imgs-item-no) - 1));
     width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     overflow: hidden;
     transform: skew(var(--scr-banner-skew)) translateX(calc(-1 * var(--scr-banner-offset-x)));
     margin: 0 -4px 0 0; /* Slight overlap to hide anti-aliased imprecise gaps */
@@ -3064,6 +3061,9 @@
   .scr-banner-imgs-item div {
     height: var(--scr-banner-inner-height);
     animation: scr-banner-anim-slide-x-1 2s forwards var(--bezier-easeOutExpo) var(--scr-banner-anim-offset);
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }
 @media all, bookshop {
