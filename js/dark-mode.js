@@ -1,6 +1,8 @@
 // Based on randomwits.com/blog/dark-mode-jekyll
+darkmode()
+
 document.getElementsByClassName('dark-mode-button')[0].onclick = function() {
-  darkmode()
+  toggleDarkMode()
 }
 
 function darkmode() {
@@ -13,11 +15,13 @@ function darkmode() {
   } else if (enabled === 'true') {
     enable()
   }
+}
 
-  if (localStorage.getItem('dark-mode') === 'false') {
-      enable();
+function toggleDarkMode() {
+  if (localStorage.getItem('dark-mode') === 'false' || localStorage.getItem('dark-mode') === null) {
+    enable();
   } else {
-      disable();
+    disable();
   }
 }
 
