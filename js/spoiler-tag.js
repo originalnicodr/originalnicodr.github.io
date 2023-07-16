@@ -38,3 +38,5 @@ function handleSpoiler(evt) {
   jSpoilers[9].addEventListener("click", handleSpoiler);
   jSpoilers[10].addEventListener("click", handleSpoiler);
   jSpoilers[11].addEventListener("click", handleSpoiler);
+  jSpoilers[12].addEventListener("click", handleSpoiler);
+  jSpoilers[13].addEventListener("click", handleSpoiler);
