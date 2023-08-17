@@ -2857,6 +2857,16 @@
     margin-bottom: 10px;
   }
 }
+@media only screen and (max-width: 768px) {
+  .project h2 {
+    font-size: 24px;
+  }
+}
+@media only screen and (max-width: 576px) {
+  .project h2 {
+    font-size: 22px;
+  }
+}
 @media all, bookshop {
   .project {
     display: flex;
@@ -2867,9 +2877,19 @@
     box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s;
     cursor: pointer; /* Change cursor on hover */
-    width: 800px;
+    max-width: 800px;
     margin: 20px auto;
     border-radius: 5px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .project {
+    margin: 15px;
+  }
+}
+@media only screen and (max-width: 576px) {
+  .project {
+    margin: 10px;
   }
 }
 @media all, bookshop {
@@ -2886,11 +2906,21 @@
 }
 @media all, bookshop {
   .project img {
-    width: 200px; /* Set a fixed width for the image */
+    width: 200px;
     height: auto; /* Allow height to adjust proportionally */
     margin-right: 20px;
     border-radius: 5px;
     transition: transform 0.3s;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .project img {
+    width: 150px;
+  }
+}
+@media only screen and (max-width: 576px) {
+  .project img {
+    width: 100px;
   }
 }
 @media all, bookshop {
@@ -2925,14 +2955,26 @@
   }
 }
 @media all, bookshop {
+  .project-footer {
+    display: flex;
+  }
+}
+@media all, bookshop {
   .project-tags {
     font-size: 14px;
     color: #666;
     width: 100%;
     text-align: right;
     margin-top: 8px;
-    border-top: 1px solid #ddd; /* Add border */
-    /*padding-top: 5px; */
+    border-top: 1px solid #ddd;
+  }
+}
+@media all, bookshop {
+  .project-extra-link {
+    font-size: 14px;
+    text-decoration: underline;
+    float: left;
+    z-index: 1;
   }
 }
 @media all, bookshop {
