@@ -551,7 +551,7 @@
   /* Header */
   /* Logo */
   /* Nav */
-  /* Pagination */ /* Sections */ /* Social Links */ /* Super basic resets */
+  /* Pagination */ /* Project Card */ /* Sections */ /* Social Links */ /* Super basic resets */
   /* --------------------------- Multi-screenshot banner graphic --------------------------- */
   /* Extra wrapper for slide animations */
   /* Example overlay container that can be used for text/etc */
@@ -2843,6 +2843,102 @@
     font-size: 15px;
     font-weight: 600;
     color: rgba(17, 14, 56, 0.7);
+  }
+}
+@media all, bookshop {
+  .page a {
+    text-decoration: none; /* Remove underline from all links */
+    color: inherit; /* Inherit color from parent */
+    border-bottom: none;
+  }
+}
+@media all, bookshop {
+  .project h2 {
+    margin-bottom: 10px;
+  }
+}
+@media all, bookshop {
+  .project {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    padding: 20px 20px 5px 20px;
+    border-bottom: 1px solid #ddd;
+    box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    cursor: pointer; /* Change cursor on hover */
+    width: 800px;
+    margin: 20px auto;
+    border-radius: 5px;
+  }
+}
+@media all, bookshop {
+  .project-inner-card {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+}
+@media all, bookshop {
+  .project:hover {
+    transform: translateY(-2px);
+  }
+}
+@media all, bookshop {
+  .project img {
+    width: 200px; /* Set a fixed width for the image */
+    height: auto; /* Allow height to adjust proportionally */
+    margin-right: 20px;
+    border-radius: 5px;
+    transition: transform 0.3s;
+  }
+}
+@media all, bookshop {
+  .project:hover img {
+    transform: scale(1.05);
+  }
+}
+@media all, bookshop {
+  .project-description {
+    flex: 1;
+  }
+}
+@media all, bookshop {
+  .project-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+@media all, bookshop {
+  .project-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+}
+@media all, bookshop {
+  .project-date {
+    font-size: 14px;
+    color: #999;
+    margin-bottom: 5px;
+  }
+}
+@media all, bookshop {
+  .project-tags {
+    font-size: 14px;
+    color: #666;
+    width: 100%;
+    text-align: right;
+    margin-top: 8px;
+    border-top: 1px solid #ddd; /* Add border */
+    /*padding-top: 5px; */
+  }
+}
+@media all, bookshop {
+  .project-details {
+    font-size: 14px;
+    color: #666;
   }
 }
 @media all, bookshop {
