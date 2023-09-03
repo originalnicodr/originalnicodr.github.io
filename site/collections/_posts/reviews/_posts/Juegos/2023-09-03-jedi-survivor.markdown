@@ -1,7 +1,7 @@
 ---
 date:   2023-09-03
 title:  "Star Wars Jedi: Survivor"
-description: Excelentes personajes, la dificultad de personalizar personajes establecidos, y la imposibilidad del juego de correr siquiera en una computadora in-world.
+description: Excelentes personajes, la dificultad de personalizar protagonistas establecidos, y la imposibilidad del juego de correr siquiera en una computadora in-world.
 tags:   [star-wars, spoilers-parciales]
 image:  '/images/reviews/jedi-survivor.jpg'
 category: [el-corgi-pretencioso, juego]
@@ -137,4 +137,4 @@ Algo copado fue como el título de Jedi Survivor, {% include spoiler.html conten
 
 <hr>
 
-En conclusión, el juego cuenta con excelente diseño de niveles y puzzles, pero le faltó un golpe de horno para terminar de pulirlos. Con una historia que también le faltó un poco más de trabajo y una (falta de) estabilidad técnica que deja bastante que desear, el juego se queda corto para alcanzar todo el potencial que se propone. Pero estos atisbos de genialidad, la trayectoria de evolución que plantea desde el juego anterior, y las fantásticas relaciones entre sus personajes son más que suficientes para justificar mi tiempo invertido en este, como así también estar a la expectativa de su  inminente secuela.
+En conclusión, el juego cuenta con excelente diseño de niveles y puzzles, pero le faltó un golpe de horno para terminar de pulirlos. Con una historia que también le faltó un poco más de trabajo y una (falta de) estabilidad técnica que deja bastante que desear, se queda corto para alcanzar todo el potencial que se propone. Pero estos atisbos de genialidad, la trayectoria de evolución que plantea desde el juego anterior, y las fantásticas relaciones entre sus personajes son más que suficientes para justificar mi tiempo invertido en este, como así también estar a la expectativa de su inminente secuela.
