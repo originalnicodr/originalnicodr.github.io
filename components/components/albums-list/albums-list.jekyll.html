@@ -1,20 +1,25 @@
 {% if include.show_albums %}
 
 <div class="album-order-wrapper">
- <strong>Album order</strong>
-  <div class="album-order-options">
-    <a href="/virtual-photography" class="album-order-selector{% if page.url == '/virtual-photography/' %} active-link{% endif %}"><strong>Alphabetically</strong></a>
-    <a href="/virtual-photography-new" class="album-order-selector{% if page.url == '/virtual-photography-new/' %} active-link{% endif %}"><strong>Date</strong></a>
-  </div>
-</div>
+  <strong>Order albums by</strong>
+   <div class="album-order-options">
+     <button id="order-album-name" class="album-order-selector{% if page.url == '/virtual-photography/' %} active-link{% endif %}"><strong>Name</strong></button>
+     <button id="order-album-date" class="album-order-selector{% if page.url == '/virtual-photography-new/' %} active-link{% endif %}"><strong>Date</strong></button>
+   </div>
+ </div>
 
 <div class="container animate">
-  <div class="row">
-    {%if page.url contains "virtual-photography-new" %}
-      {% assign ordered-albums = site.albums | reverse %}
-    {% else %}
-      {% assign ordered-albums = site.albums | sort: "title" %}
-    {% endif %}
+  <div id="ordered-by-name" class="row">
+    {% assign ordered-albums = site.albums | sort: "title" %}
+    
+
+    {% for album in ordered-albums%}
+      {% bookshop album-card album=album %}
+    {% endfor %}
+  </div>
+
+  <div id="ordered-by-date" class="row">
+    {% assign ordered-albums = site.albums | reverse %}
 
     {% for album in ordered-albums%}
       {% bookshop album-card album=album %}
@@ -22,3 +27,5 @@
   </div>
 </div>
 {% endif %}
+
+<script src="../../js/album-order.js"></script>
