@@ -333,10 +333,6 @@ My own generated thumbnail:
 
 <p align="center"><img src="https://cdn.discordapp.com/attachments/1062912779360677989/1063528877588238336/DeathsDoor_2022-02-18_00-16-24-1-600.jpg"> </p>
 
-<p align="center"><img src="https://i.imgur.com/t6gjz3f.jpg"> </p>
-
-
-
 So, by creating the thumbnails ourselves we are making sure their quality is as high as possible.
 
 Just for documentation sake tho, and if you are interested in the details, to be able to take use of these automatic Discord thumbnails you have to change the **cdn** start of the link for **media** and append it with **?width=450&height=600** or whatever size you want to resize the image (you can even do so with different aspect ratios to the original image! With the result being Discord cropping it). So given a link like `cdn.discordapp.com/attachments/id1/id2/pretty-image-of-a-dolphin.jpg` would change to `media.discordapp.com/attachments/id1/id2/pretty-image-of-a-dolphin.jpg?width=450&height=600`.
