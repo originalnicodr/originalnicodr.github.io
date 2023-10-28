@@ -6,7 +6,17 @@ tags:   [project, virtual-photography]
 image:  '/images/blog/post-2.jpg'
 category: blog
 ---
-{% raw %} 
+{% raw %}
+
+**EDIT 28/10/2023**: Since this post was first published, Discord has been doing some changes behind the curtain to essentially [block users from using it as a file hosting](https://www.tumblr.com/bechnokid/729708997182210048/the-fact-that-people-have-been-using-discord-of) starting from next year. Can't say that I blame them for that.
+
+Therefore, I had to look up alternative hosts for the albums, and from all of the different sites I looked up, Imgur seemed to be the best alternative because of its longevity, reliability, and non-destructive compression, therefore I updated my script to upload images to Imgur instead.
+
+So instead of following the steps described in the "Actually using Discord as a host" section (you can stop right before it asks you to create a server), follow the instructions on how to set it up from [this readme](https://github.com/originalnicodr/originalnicodr.github.io/blob/main/tools/README.md). Then, its usage should be pretty much the same. After that, continue with the next section of the guide.
+
+However, note that no free solution would ever be as reliable as paying for hosting yourself, so use it understanding that one day you may need to switch to another alternative, or start paying. For that reason, I recommend backing up all of your albums locally if you ever need to upload them to a new host.
+
+<hr>
 
 Since I worked on somewhat of a portfolio for my site here without paying for hosting, some friends asked me for suggestions on how to do it, so I am writing this in case it's useful for more people. I will try to write it so you can make a site of your own without knowing much about Github, Python, Jekyll, or how to code in general, but will include some bits here and there explaining some stuff in case you are interested in knowing how it works. However, I won't explain how to do some stuff (like cloning a GitHub repository) for the sake of this tutorial brevity, so you will have to look up how to do it yourself.
 
@@ -16,7 +26,7 @@ Before jumping into it, if you happen to be already paying for an Adobe subscrip
 
 # Preparation
 
-First of all, you will need to create a GitHub account if you don't have one. After doing so you will need to create a repository with the following name: `your-github-nick.github.io`. Since I am creating a website for a friend to write this tutorial along, I will be naming it `sonozki.github.io`. The website will live in this URL, so take that in mind when creating your GitHub name.
+First of all, you will need to create a GitHub account if you don't have one. After doing so you will need to create a repository with the following name: `your-github-nick.github.io`. Since I am creating a website for a friend to write this tutorial along, I will be naming it `sonozki.github.io`. The website will live in this URL, so take that in mind when creating your GitHub username.
 
 To create the site itself, we will be using Jekyll, which is a static website generator. What it does is basically create some HTML files based on templates you wrote, so every time you want to add something to your site you don't have to copy all the header, footer, and style of the page, nor link it to other parts of the site. Follow the steps [here](https://jekyllrb.com/docs/installation/) to install Jekyll.
 
@@ -28,7 +38,7 @@ Also, you can technically not use any theme and build the site from the ground u
 
 You will probably also want to download [GitHub Desktop](https://desktop.github.com/) and clone (it's like downloading for repositories) the new repository you created. After doing so copy all the contents of the Jekyll theme you picked and paste them into the new repository folder that you just cloned.
 
-Before doing anything else you will want to install all the plugins the theme is using to test that we can build the site locally (and therefore test any change locally before putting it online). To do that, open the cmd in windows (or equivalent on Linux and Mac), go to your repository folder (you can simply type `cmd` in the window explorer when you are inside the site folder, on the path bar on top), and run the `bundle install` command. When the command finishes executing, "turn on" the site with the command `bundle exec jekyll serve` and go to the server address written in the console (which is usually 127.0.0.1:4000) on your favorite web browser. And boom, you should be able to see the site.
+Before doing anything else you will want to install all the plugins the theme is using to test that we can build the site locally (and therefore test any change locally before putting it online). To do that, open the cmd in windows (or equivalent on Linux and Mac), go to your repository folder (you can simply type `cmd` in the window explorer when you are inside the site folder, on the file path bar on top), and run the `bundle install` command. When the command finishes executing, "turn on" the site with the command `bundle exec jekyll serve` and go to the server address written in the console (which is usually 127.0.0.1:4000) on your favorite web browser. And boom, you should be able to see the site.
 
 Be aware that there is a chance you will get some errors when trying to run `bundle install` on the theme you downloaded (especially if you are on Windows). Just don't edit any of the theme files and try to google the errors you are getting. Chances are the problem is in your machine. I know it's frustrating but you will have to power through it.
 
@@ -36,7 +46,7 @@ Be aware that there is a chance you will get some errors when trying to run `bun
 
 ## Adding an example album for testing
 
-Now it's time to start editing the theme! To have something to work with while we edit the site, download some albums on my own page, like the Deaths Door one. Put [this .md file](https://raw.githubusercontent.com/originalnicodr/originalnicodr.github.io/main/site/collections/_albums/2022-03-05-deaths-door.md) inside the `_posts` folder inside your repository (this folder may change with the theme), and the [.json file](https://raw.githubusercontent.com/originalnicodr/originalnicodr.github.io/main/site/_data/virtual-photography/deaths-door.json) inside your `data/virtual-photography` folder (you will need to create the subfolder).
+Now it's time to start editing the theme! To have something to work with while we edit the site, download some albums from my own page, like the Deaths Door one. Put [this .md file](https://raw.githubusercontent.com/originalnicodr/originalnicodr.github.io/main/site/collections/_albums/2022-03-05-deaths-door.md) inside the `_posts` folder inside your repository (this folder may change with the theme), and the [.json file](https://raw.githubusercontent.com/originalnicodr/originalnicodr.github.io/main/site/_data/virtual-photography/deaths-door.json) inside your `data/virtual-photography` folder (you will need to create the subfolder).
 
 After pasting that you may want to check what the other existing .md files have on them. In the case of this theme, we need to add `layout: post` to our .md file, so it should end up looking like the following:
 
@@ -53,13 +63,15 @@ banner-offset: 5
 ---
 ```
 
+Be aware that depending on the theme you are using you may be looking at other layout name.
+
 Little explanation of what everything means.
 
 <ul>
-<li>• layout: what template Jekyll will use to render this file.</li>
-<li>• date: date used to sort the albums on the homepage (altho it depends on your theme, it might order it alphabetically)</li>
-<li>• title: title of the album, which will be displayed in the banner, page name, etc.</li>
-<li>• developer: the developer team that made the game, shown on the banner.</li>
+<li>• layout: What template Jekyll will use to render this file. Be aware that depending on the theme you are using you may be looking at another layout name.</li>
+<li>• date: Date used to sort the albums on the homepage (altho it depends on your theme, it might order them alphabetically).</li>
+<li>• title: Title of the album, which will be displayed in the banner, page name, etc.</li>
+<li>• developer: The developer team that made the game, shown on the banner.</li>
 <li>• card-image: What image from the album .json should Jekyll use when listing the album.</li>
 <li>• card-offset: An percentage value used to describe the vertical offset the image should have on the banner, to crop the image in the right spot.</li>
 <li>• banner-image: Same as card-image but with the album's banner.</li>
@@ -68,7 +80,7 @@ Little explanation of what everything means.
 
 The theme you use may have extra stuff, like "tags". They are not necessary for what we will be doing, but might be useful for your particular theme.
 
-Also since you are in there, delete the other .md files inside the `_posts` folder. In our case, we need to also delete the `{% post_url 2016-10-10-getting-started %}` line in the `about.md` because we deleted said file and it would throw an error otherwise.
+Also since you are in there, delete the other .md files inside the `_posts` folder (since they are being used for testing the theme). In our case, we need to also delete the `{% post_url 2016-10-10-getting-started %}` line in the `about.md` because we deleted said file and it would throw an error otherwise.
 
 ## Making the albums actually display something
 
@@ -152,7 +164,7 @@ We can see the Death's Door post there now, yay! Unfortunately, when clicking it
 
 If you wanna know, this piece of HTML code is separated into two parts, the first one is just the album's banner, and the second one is all referring to the image grid of said album. If you know what you are doing, you can play around with the banner, or change it entirely for another thing. But I would suggest keeping the grid part of the code like it is. If you want to customize that I will let you know how to do that in a second.
 
-But before we can see anything else on the site we will need to install a couple of Javascript files. So download [this](https://raw.githubusercontent.com/originalnicodr/originalnicodr.github.io/main/site/js/album/pig.js) and [this](https://raw.githubusercontent.com/originalnicodr/originalnicodr.github.io/main/site/js/album/jquery.swipebox.js), create a js folder in your main repository folder if there isn't one yet, and put these two files inside of it.
+But before we can see anything else on the site we will need to install a couple of Javascript files. So download [this](https://raw.githubusercontent.com/originalnicodr/originalnicodr.github.io/main/site/js/album/pig.js) and [this](https://raw.githubusercontent.com/originalnicodr/originalnicodr.github.io/main/site/js/album/jquery.swipebox.js), create a js folder in your main site folder if there isn't one yet, and put these two files inside of it.
 
 To give a bit more context, [pig.js](https://github.com/jmodjeska/pigg) is a library used to display a grid of images. However, the file you download is one modified by jmodjeska that adds a lightbox (which is what zooms fullscreen when clicking a photo in a gallery to display it in full size) when clicking each file, and further modified by me to be able to use image links that aren't on the same repository as the site. And the other .js file is the lightbox code itself.
 
@@ -199,7 +211,7 @@ Change the 0.5 for another value (preferably bigger I assume) if you want to mak
 
 ## Adding images to the album list
 
-If we go to the main page of our site, we can notice that the album isn't displaying any image in the list. So what we will do is go to whatever HTML file displays the list of albums. You should be able to find it by searching for `post.image` on the files (recommend using VSCode or a similar IDE that allows you to easily search strings inside multiple files on a folder). In the theme at hand, is in `featured-post.html`.
+If we go to the main page of our site, we notice that the album isn't displaying any image in the list. So what we will do is go to whatever HTML file displays the list of albums first. You should be able to find it by searching for `post.image` on the files (recommend using VSCode or a similar IDE that allows you to easily search strings inside multiple files on a folder). In the theme at hand, is in `featured-post.html`.
 
 <p align="center"><img src="/images/blog/post-2/crappy-album-card.jpg"></p>
 
@@ -225,7 +237,7 @@ That part was probably more complicated than it needed to be, so if you have pro
 
 ## Polishing
 
-We have almost everything done, now it's time to do so some polishing to the site itself. First, we will get rid of all the pages that don't interest us. In our case, we will delete "Interesting Facts", "Learning", "Resources", "Sample Posts", and "Documentation".
+We have almost everything done, now it's time to do some polishing to the site itself. First, we will get rid of all the pages that don't interest us. In our case, we will delete "Interesting Facts", "Learning", "Resources", "Sample Posts", and "Documentation".
 
 To do so we will have to go to the `pages` folder and delete all of these. This will delete the pages themselves, but we also have to get rid of them from the top menu, so we will go to the `_data/settings.yml` and delete them from there. Please be aware that the place to edit this menu will change from theme to theme, but it shouldn't be too difficult to find.
 
@@ -241,7 +253,7 @@ And as a final note, you can probably delete the images inside the `assets/img` 
 
 And now, it's time to create our albums!
 
-GitHub allows us to use up to 2gb in our repositories, but it's probably not enough for our photos. Besides, the speed at which images are loaded from a GitHub repo load is... pretty bad. So, we will be uploading them somewhere else.
+GitHub allows us to use up to 2gb in our repositories, but it's probably not enough for our photos. Besides, the speed at which images are loaded from a GitHub repo load is... pretty bad (understandably so, at the end of the day its a site for hosting code, not images!). So, we will be uploading them somewhere else.
 
 You can, of course, upload these pictures wherever you want, as long as the .json format follows the format of the deaths-door.json example.
 
@@ -321,7 +333,11 @@ My own generated thumbnail:
 
 <p align="center"><img src="https://cdn.discordapp.com/attachments/1062912779360677989/1063528877588238336/DeathsDoor_2022-02-18_00-16-24-1-600.jpg"> </p>
 
-So, by creating the thumbnails ourselves we are making sure the compression used in them is high.
+<p align="center"><img src="https://i.imgur.com/t6gjz3f.jpg"> </p>
+
+
+
+So, by creating the thumbnails ourselves we are making sure their quality is as high as possible.
 
 Just for documentation sake tho, and if you are interested in the details, to be able to take use of these automatic Discord thumbnails you have to change the **cdn** start of the link for **media** and append it with **?width=450&height=600** or whatever size you want to resize the image (you can even do so with different aspect ratios to the original image! With the result being Discord cropping it). So given a link like `cdn.discordapp.com/attachments/id1/id2/pretty-image-of-a-dolphin.jpg` would change to `media.discordapp.com/attachments/id1/id2/pretty-image-of-a-dolphin.jpg?width=450&height=600`.
 
@@ -329,7 +345,7 @@ Discord automatic thumbnails for png files isn't as bad, but since we are compre
 
 # Putting your site online
 
-After uploading all of our albums to our site we now only have to put them online. In the case of this theme, we don't actually have to do anything! But I will still try to explain how you would go about doing it for completeness' sake.
+After uploading all of our albums to our site we now only have to put it online. In the case of this theme, we don't actually have to do anything! But I will still try to explain how you would go about doing it for completeness' sake.
 
 So to do this we will first need to create a branch in our repository called `gh-pages`. Delete everything on the branch, making it empty. You can do it by [following this tutorial](https://jira.atlassian.com/browse/SRCTREEWIN-8976).
 

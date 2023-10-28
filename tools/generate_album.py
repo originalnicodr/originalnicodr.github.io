@@ -1,10 +1,12 @@
-from PIL import Image, ImageFilter
 import os
-import sys
 import json
-from dotenv import load_dotenv
+import sys
 import time
-import discord
+import webbrowser
+
+from dotenv import load_dotenv, set_key
+import pyimgur
+from PIL import Image, ImageFilter
 
 def file_name_without_file_extension(file_name):
     return os.path.splitext(file_name)[0]
@@ -45,61 +47,99 @@ def createthumbnail(file_path, size):
 
         return saved_filename
 
-async def generate_album(directory_name):
+def upload_shot(file_path, imgur_album, im):
+    uploaded_image = im.upload_image(file_path, album=imgur_album)
+    return uploaded_image
+
+def is_shit_in_album(file_name, album):
+    for img in album:
+        #print(f"is {file_name} inside {img['file_name']}?")
+        if file_name in img["file_name"]:
+            return True
+    return False
+
+def generate_album(directory_name, im):
+    imgur_album = im.create_album(directory_name)
     album = []
+
+    if os.path.exists(directory_name + '.json'):
+        with open(directory_name + '.json') as json_file:
+            album = json.load(json_file)
+            print("Continuing previous uploading session.")
+
     for dirpath,_,filenames in os.walk(directory_name):
         for file_name in filenames:
+
+            if is_shit_in_album(file_name, album):
+                print(f"{file_name} uploaded in previous session, skipping...")
+                continue
+            
             img = {}
+            img['file_name'] = file_name
             print(file_name)
             absolute_path = os.path.abspath(os.path.join(dirpath, file_name))
+
+            imgur_image = upload_shot(absolute_path, imgur_album, im)
             
-            img['imageFull-link'] = await upload_shot(absolute_path)
+            img['imageFull-link'] = imgur_image.link
 
+            # Imgur thumbnails have a lot of limitations that we don't want to deal with, so we are making them ourselves.
+            # img['thumbnail-link'] = imgur_image.link_large_thumbnail
+            # img['image1080-link'] = imgur_image.link_huge_thumbnail
+
+            print("Sleeping 50s to avoid hitting the API rate limit.")
+            time.sleep(50)
+
+            print("Uploading first thumbnail.")
             img_600 = createthumbnail(absolute_path, 600)
-            img['thumbnail-link'] = await upload_shot(img_600)
+            img['thumbnail-link'] = upload_shot(img_600, imgur_album, im)
+            print("Sleeping 50s to avoid hitting the API rate limit.")
+            time.sleep(50)
 
+            print("Uploading second thumbnail.")
             img_1080 = createthumbnail(absolute_path, 1080)
-            img['image1080-link'] = await upload_shot(img_1080)
+            img['image1080-link'] = upload_shot(img_1080, imgur_album, im)
+            print("Sleeping 50s to avoid hitting the API rate limit.")
+            time.sleep(50)
 
             img['aspect-ratio'] = str(get_ar(absolute_path))
 
             album.append(img)
     
-    with open(directory_name + '.json', 'w') as f:
-        json.dump(album, f, indent=4)
+            with open(directory_name + '.json', 'w') as f:
+                json.dump(album, f, indent=4)
 
+def imgur_log():
+    CLIENT_ID = os.getenv('CLIENT_ID')
+    CLIENT_SECRET = os.getenv('CLIENT_SECRET')
+    ACCES_TOKEN = os.getenv('ACCES_TOKEN')
+    REFRESH_TOKEN = os.getenv('REFRESH_TOKEN')
 
-intents = discord.Intents.default()
-bot = discord.Client(intents=intents)
+    im = pyimgur.Imgur(CLIENT_ID, CLIENT_SECRET, ACCES_TOKEN, REFRESH_TOKEN)
 
-@bot.event
-async def on_ready():
-    print("Bot started successfully!")
+    if not im.is_authenticated:
+        if REFRESH_TOKEN:
+            print("Access token expired, requesting another.")
+            im.refresh_access_token()
+        else:
+            auth_url = im.authorization_url('pin')
+            webbrowser.open(auth_url)
+            pin = input("What is the pin? ")
+            access_token, refresh_token = im.exchange_pin(pin)
+            
+            set_key(dotenv_path=".env", key_to_set="REFRESH_TOKEN", value_to_set=refresh_token)
+            set_key(dotenv_path=".env", key_to_set="ACCES_TOKEN", value_to_set=access_token)
+    return im
+
+if __name__ == "__main__":
+    load_dotenv()
     try:
         directory_name = sys.argv[1]
     except:
         print('Please pass directory_name')
         sys.exit()
 
-    await generate_album(directory_name)
+    im = imgur_log()
+    generate_album(directory_name, im)
     print(f"Album {directory_name} created successfully!")
     time.sleep(3)
-
-def _get_upload_channel():
-    for g in bot.guilds:
-        if g.name == DISCORD_SERVER:
-            return discord.utils.get(g.channels, name=DISCORD_CHANNEL)
-
-async def upload_shot(file_name):
-    dump_channel = _get_upload_channel()
-
-    uploaded_shot = await dump_channel.send(file=discord.File(file_name))
-    return uploaded_shot.attachments[0].url
-
-
-load_dotenv()
-DISCORD_TOKEN = os.getenv('DISCORD_TOKEN')
-DISCORD_SERVER = os.getenv('DISCORD_SERVER')
-DISCORD_CHANNEL = os.getenv('DISCORD_CHANNEL')
-
-bot.run(DISCORD_TOKEN)
