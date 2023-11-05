@@ -92,13 +92,13 @@ def generate_album(directory_name, im):
 
             print("Uploading first thumbnail.")
             img_600 = createthumbnail(absolute_path, 600)
-            img['thumbnail-link'] = upload_shot(img_600, imgur_album, im)
+            img['thumbnail-link'] = upload_shot(img_600, imgur_album, im).link
             print("Sleeping 50s to avoid hitting the API rate limit.")
             time.sleep(50)
 
             print("Uploading second thumbnail.")
             img_1080 = createthumbnail(absolute_path, 1080)
-            img['image1080-link'] = upload_shot(img_1080, imgur_album, im)
+            img['image1080-link'] = upload_shot(img_1080, imgur_album, im).link
             print("Sleeping 50s to avoid hitting the API rate limit.")
             time.sleep(50)
 
