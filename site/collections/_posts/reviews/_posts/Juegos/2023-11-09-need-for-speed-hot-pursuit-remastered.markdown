@@ -53,6 +53,6 @@ Se que no viene al caso, pero me resulta en extremo gracioso como los policías,
 
 <hr>
 
-En resumen, Need For Speed Hot Pursuit Remastered presenta algunas ideas de diseño que son hasta incluso interesantes en un género tan irónicamente estacionario como son los juegos de carreras, aunque estas ideas sean más atractivas en su estado de hipotético que en su implementación. Más allá de los problemas técnicos y de diseño, sigue sirviendo como distracción y propone desafíos para quienes tengan más experiencia en el género y se vean seducidos por salir siempre primero en todo (aunque qué tan miserable dichos problemas hagan de la experiencia desconozco).
+En resumen, Need For Speed Hot Pursuit Remastered presenta algunas ideas de diseño que son hasta incluso interesantes en un género tan irónicamente estacionario como son los juegos de carreras, aunque estas ideas sean más atractivas en su estado hipotético que en su implementación. Más allá de los problemas técnicos y de diseño, sigue sirviendo como distracción y propone desafíos para quienes tengan más experiencia en el género y se vean seducidos por salir siempre primero en todo (aunque qué tan miserable dichos problemas hagan de la experiencia completista desconozco).
 
 Aunque no sea Burnout, es lo único que nos queda de éste. Por lo que, mientras aprecio el aporte que Criterion trajo a NFS, voy a intentar apreciar el resto de la saga por lo que es, y no por lo que quisiera que fuese.
