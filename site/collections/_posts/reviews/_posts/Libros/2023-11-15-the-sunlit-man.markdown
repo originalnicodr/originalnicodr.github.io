@@ -7,6 +7,8 @@ tags: [cosmere, spoilers]
 category: [el-corgi-pretencioso, libro]
 ---
 
+Antes de arrancar, les advierto que en la siguiente nota hay spoilers del libro en cuestión, como así también de todo lo publicado del Cosmere hasta la fecha. Eso incluye Mistborns era 1 y 2, Stormlight Archives hasta Rythm of War, Warbreaker y los cuentos cortos. Están avisados.
+
 Pensé que la historia iba a disparar a Nómada visitando varios mundos, pero se concentró más en lo mostrado en el libro, lo cual estuvo bueno. El planeta daba para ser explorado en el detalle con el que vimos. De igual manera, la historia de Nómada tiene pinta que nos va a llevar por todo el Cosmere, por lo que capaz esa idea original que tenía va a ser su historia desde un punto de vista más macro.
 
 Me da vergüenza lo tarde que me di cuenta de que el protagonista era Sigzil. Básicamente el libro me lo tuvo que escupir en la cara. Me alegró un poco saber igual que la idea era que nosotros lo descubriéramos mientras leíamos (por eso el uso del nombre Nómada).
