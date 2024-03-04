@@ -4,6 +4,6 @@ title:  "Mass Effect: Andromeda"
 description:
 developer: BioWare
 card-image: 15
-banner-image: 22
+banner-image: 31
 banner-offset: 20
 ---

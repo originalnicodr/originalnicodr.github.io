@@ -3,7 +3,7 @@ date: 2021-08-04
 title: "Blur"
 description:
 developer: Bizarre Creations
-card-image: 3
+card-image: 2
 banner-image: 5
 banner-offset: 95
 ---

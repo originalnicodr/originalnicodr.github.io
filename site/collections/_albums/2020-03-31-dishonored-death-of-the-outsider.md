@@ -3,7 +3,7 @@ date: 2020-03-31
 title: "Dishonored: Death of the Outsider"
 description:
 developer: Arkane Studios
-card-image: 0
-banner-image: 1
+card-image: 10
+banner-image: 0
 banner-offset: 35
 ---
