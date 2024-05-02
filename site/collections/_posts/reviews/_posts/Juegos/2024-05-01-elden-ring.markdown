@@ -71,7 +71,7 @@ Siguiendo con la onda mecánica y como se mencionó brevemente antes, la cantida
 
 Volviendo momentáneamente a los bosses, de entre todos los que nos podemos llegar a cruzar en el overworld hay uno que se repite varias veces en una gran cantidad de sabores, y es el dragón.
 
-![Dragon](/images/reviews/elden-ring/Dragon.jpg)
+![Dragon](/images/reviews/elden-ring/dragon.jpg)
 
 El primer encuentro que tenemos con este es excelente. Nos muestra lo "dinámico" que puede ser el mundo, como este reacciona a la presencia del enemigo, y cómo podemos usar la geografía (geometría?) de la arena a favor nuestro si la entendemos bien (ej. esconderse detrás de una piedra si te tira llamas de fuego). Lamentablemente, no solo el impacto de las subsiguientes peleas con otros dragones se ve disminuida porque ya nos la hemos cruzado, sino que también el pulido de estas.
 
