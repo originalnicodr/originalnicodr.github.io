@@ -7,8 +7,6 @@ image:  '/images/reviews/bomb-rush-cyberfunk.jpg'
 category: [el-corgi-pretencioso, juego]
 ---
 
-decepcion mecanica
-
 Mi relación con Bomb Rush Cyberfunk puede que sea bastante diferente a la del público al que apunta. Jet Set Radio es de esos juegos clásicos al cual no tuve acceso (ni conocimiento) cuando crecí pero que hasta el día de hoy sigue siendo relevante, principalmente por su estética y soundtrack. Como suele suceder, dada la inexistencia de una nueva entrega de la saga en casi 20 años, resultó en una secuela espiritual hecha ni más ni menos que por Team Reptile.
 
 Con el estudio si tengo historia. Lethal League forma parte de mi pool de juegos que tengo instalado cuando caen los pibes para boludear un rato. Aunque nunca compré mucho la estética del juego, su estilo visual y musical fue muestra suficiente de que el estudio tenía la capacidad para continuar el legado punk-futurista de Jet Set Radio, en todo menos en nombre. Dada mi confianza en el estudio y mi interés por experimentar la saga original, Bomb Rush Cyberpunk estuvo en mi radar desde el día 0.
