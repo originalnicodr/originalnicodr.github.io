@@ -2,7 +2,7 @@
 date:   2024-06-18
 title:  "Halo 3"
 description: Fisicalidad y abstracción mecánica, el tira y afloja de la predictibilidad de la IA, y las herramientas de modding en un contexto capitalista.
-tags:   [halo]
+tags:   [halo, spoilers-parciales]
 image:  '/images/reviews/halo-3.jpg'
 category: [el-corgi-pretencioso, juego]
 ---
@@ -40,7 +40,7 @@ Pero eso es suficiente del lugar de Halo en la historia del medio, ¿qué onda H
 
 La verdad que la historia me pareció medio poronga. El final del juego anterior prepara lo que debería ser el final explosivo de la trilogía, y sabiendo el hype que tuvo este en su momento supongo que tenía mayores expectativas con respecto a la narrativa, pero la verdad que la historia de la saga nunca me voló la cabeza. Es más, las encuentro como mucho mediocres, y ni los quilombos políticas del Covenant ayudan a levantarlo. Supongo que no ayuda que master chief sea una muralla estoica que no deja ver ni un atisbo de emoción.
 
-Algo que si me pareció recontra estúpido fue cerca del final cuando <spoiler>unos zombies flood le hablan a Master Chief y al elite creo y les dicen no nos maten, vamos a matar a este otro tipo y es onda ??? ¿Ni ponen en duda que el mismo flood les está hablando? No lo cuestionan como diciendo che vos nos queres matar a todos capaz no debería darte una mano aunque me venga bien a mi también. Nada.</spoiler>
+Algo que si me pareció recontra estúpido fue cerca del final cuando {% include spoiler.html content="unos zombies flood le hablan a Master Chief y al elite creo y les dicen no nos maten, vamos a matar a este otro tipo y es onda ??? ¿Ni ponen en duda que el mismo flood les está hablando? No lo cuestionan como diciendo che vos nos queres matar a todos capaz no debería darte una mano aunque me venga bien a mi también. Nada." %}
 
 La serie nunca conectó conmigo emocionalmente. El comandante Johnson (cuyo nombre tuve que googlear porque no lo recordaba) siempre me pareció medio superficial, como tampoco me evoco nada la capitana que introducen al comienzo del juego. Capaz lo estoy viendo mal, y debería interpretarla como la trama de no sé, Rambo 2. Como una excusa para mostrar acción descerebrada nomas.
 
@@ -54,8 +54,7 @@ Claramente Halo no fue diseñado por Arkane ni mucho menos, pero hay ciertos mom
 
 Ahora, si hay algo que no entiendo, ¿a quién poronga le gusta jugar contra the flood? Una de las mejores cosas de Halo son los diferentes tipos de enemigos y la sinergia entre ellos. Si me cambias eso por bichos que reviven cadáveres y van de frente hacia el jugador me cambias completamente la dinámica que tanto estaba disfrutando. Si tiene un valor interesante con respecto a que si tenes aliados con vos si no los cuidas no solo no te ayudan más, sino que hasta se vuelven enemigos. Además que varían el gameplay al jugar más a la defensiva que a la ofensiva rompiendo barreras enemigas. Sin embargo, es la parte más plomo de cada Halo que jugué, y mis mejores recuerdos con la saga son cuando no estoy lidiando con esta (probablemente por eso disfruté tanto Reach). Por suerte entiendo que este debería ser el último título que nos enfrentamos a ellos.
 
-El nivel en donde vamos a <spoiler>la colmena flood</spoiler> también me pareció una chotada. Aunque interesante por momentos a nivel visual, abrirte paso por los niveles con estos bichos que parecían no se terminaban más, combinado con checkpoints cuya posición era cuestionable, implicó que sea uno de los niveles que peor la pase.
-
+El nivel en donde vamos a {% include spoiler.html content="la colmena flood" %} también me pareció una chotada. Aunque interesante por momentos a nivel visual, abrirte paso por los niveles con estos bichos que parecían no se terminaban más, combinado con checkpoints cuya posición era cuestionable, implicó que sea uno de los niveles que peor la pase.
 
 Dónde está el mayor grueso de la caracterización es en Cortana y su relación con Master Chief. Aunque ella está ausente durante casi todo el juego, los pocos momentos que pasa con el protagonista son en donde más carismático se lo ve. Casi como si ambos estuvieran coqueteando. Creo recordar que en un juego anterior mencionaban como la apariencia de Cortana estaba hecha de forma tal de que los marines no la ignoren, por lo que creo que esa forma que tiene de interactuar con Master Chief es a favor de la misión por más raro que suene. Espero que la saga siga explorando esa relación “parasocial”?
 

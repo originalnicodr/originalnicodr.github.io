@@ -1,7 +1,7 @@
 ---
 date:   2021-08-18
 title:  "Mirror's Edge"
-tags:   [mirror's-edge, ]
+tags:   [mirrors-edge]
 image:  '/images/reviews/mirrors-edge.jpg'
 category: [el-corgi-pretencioso, juego]
 ---
