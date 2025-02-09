@@ -1,7 +1,7 @@
 ---
 date:   2025-02-09
 title:  "Nine Sols"
-description: "Desentrañando de los combates más satisfactorios que vi, temáticamente y narrativamente sorprendente, y el hijo de Hollow Knight que quería crecer para ser Sekiro."
+description: "Desentrañando de los combates más satisfactorios que vi, temática y narrativamente sorprendente, y el hijo de Hollow Knight que quería crecer para ser Sekiro."
 tags:   [spoilers-parciales]
 image:  '/images/reviews/nine-sols.jpg'
 category: [el-corgi-pretencioso, juego]
