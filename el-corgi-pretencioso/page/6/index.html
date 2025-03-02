@@ -2,11 +2,16 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-3L3KV1JBV4"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  var allowedDomain = 'originalnicodr.github.io';
 
-  gtag('config', 'G-3L3KV1JBV4');
+  // Check if the current hostname matches the allowed domain, to block forks from reporting to my analytics
+  if (window.location.hostname === allowedDomain) {
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-3L3KV1JBV4');
+  }
 </script>
   
   <meta charset="utf-8">
