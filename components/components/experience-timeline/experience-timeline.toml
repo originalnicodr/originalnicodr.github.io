@@ -1,0 +1,6 @@
+[component]
+structures = []
+label = "Experience Timeline"
+description = "Timeline of work experience"
+icon = "wysiwyg"
+tags = []
