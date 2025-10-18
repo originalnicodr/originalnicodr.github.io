@@ -2,21 +2,6 @@
 <html lang="en">
 
 <head>
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-3L3KV1JBV4"></script>
-<script>
-  var allowedDomain = 'originalnicodr.github.io';
-
-  // Check if the current hostname matches the allowed domain, to block forks from reporting to my analytics
-  if (window.location.hostname === allowedDomain) {
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-3L3KV1JBV4');
-  }
-</script>
-  
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -930,5 +915,167 @@
     <script src="/js/scripts.js"></script>
     <script src="/js/common.js"></script>
     <script src="/js/spoiler-tag.js"></script>
+    <style>
+    #cookie-notice {
+        display: none;
+        text-align: center;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        background-color: var(--color-bg);
+        color: var(--color-text);
+        box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+        border-top: 1px solid var(--color-border);
+        backdrop-filter: blur(10px);
+        line-height: 3;
+    }
+    #cookie-notice span {
+        margin-right: 1rem;
+        padding: 0 1rem;
+        max-width: calc(100% - 240px);
+        display: inline-block;
+        white-space: normal;
+        vertical-align: middle;
+    }
+    #cookie-notice a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        margin: 0 0.25rem;
+        padding: 0 1.5rem;
+        border-radius: 4px;
+        text-decoration: none;
+        transition: all 0.2s ease;
+        font-weight: 600;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        height: 36px;
+        min-width: 100px;
+        background-color: white;
+    }
+    #cookie-notice a:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    }
+    #cookie-notice a.accept {
+        background-color: white;
+        border: 3px solid var(--color-accent);
+        color: var(--color-accent);
+        font-weight: 800;
+    }
+    #cookie-notice a.accept:hover {
+        border-color: var(--color-accent);
+        color: var(--color-accent);
+    }
+    #cookie-notice a.decline {
+        background-color: white;
+        border: 2px solid var(--color-border);
+        color: var(--color-text);
+    }
+    #cookie-notice a.decline:hover {
+        border-color: var(--color-accent);
+        color: var(--color-accent);
+    }
+    @media (max-width: 767px) {
+        #cookie-notice {
+            line-height: normal;
+            padding: 0.75rem 0.5rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        #cookie-notice span {
+            display: block;
+            margin: 0;
+            text-align: center;
+            font-size: 0.9em;
+            padding: 0 0.5rem;
+            max-width: 100%;
+            flex: 1 1 100%;
+            margin-bottom: 0.5rem;
+        }
+        #cookie-notice a {
+            margin: 0 0.25rem;
+            padding: 0 1rem;
+            height: 32px;
+            min-width: 80px;
+            font-size: 0.9em;
+            flex: 0 0 auto;
+        }
+    }
+</style>
+
+<div id="cookie-notice">
+    <span>We would like to use third party cookies and scripts to improve the functionality of this website.</span>
+    <a id="cookie-notice-accept" class="accept">Approve</a>
+    <a id="cookie-notice-decline" class="decline">Decline</a>
+</div>
+
+<script>
+    function createCookie(name, value, months) {
+        var expires = "";
+        if (months) {
+            var date = new Date();
+            date.setMonth(date.getMonth() + months);
+            expires = "; expires=" + date.toUTCString();
+        }
+        document.cookie = name + "=" + value + expires + "; path=/";
+    }
+
+    function readCookie(name) {
+        var nameEQ = name + "=";
+        var ca = document.cookie.split(';');
+        for (var i=0;i < ca.length;i++) {
+            var c = ca[i];
+            while (c.charAt(0)==' ') c = c.substring(1,c.length);
+            if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+        }
+        return null;
+    }
+
+    function eraseCookie(name) {
+        createCookie(name,"",-1);
+    }
+
+    // Initialize the cookie notice
+    window.addEventListener('load', function() {
+        var cookieValue = readCookie('cookie-notice-dismissed');
+
+        if (cookieValue === 'true') {
+            var allowedDomain = 'originalnicodr.github.io';
+
+// Check if the current hostname matches the allowed domain, to block forks from reporting to my analytics
+if (window.location.hostname === allowedDomain) {
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-3L3KV1JBV4');
+}
+
+        }
+
+        if (cookieValue === null) {
+            var notice = document.getElementById('cookie-notice');
+            if(notice) {
+                notice.style.display = 'block';
+            }
+        }
+    });
+
+    document.getElementById('cookie-notice-accept').addEventListener("click", function() {
+        createCookie('cookie-notice-dismissed', 'true', 6); // 6 months
+        document.getElementById('cookie-notice').style.display = 'none';
+        location.reload();
+    });
+    
+    document.getElementById('cookie-notice-decline').addEventListener("click", function() {
+        createCookie('cookie-notice-dismissed', 'false', 1); // 1 month
+        document.getElementById('cookie-notice').style.display = 'none';
+    });
+
+</script>
+
 </body>
 </html>
