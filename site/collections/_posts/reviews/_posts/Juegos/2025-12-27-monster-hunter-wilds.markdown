@@ -1,5 +1,5 @@
 ---
-date:   2025-10-22
+date:   2025-12-27
 title:  "Monster Hunter Wilds"
 description: "Los juegos como sistemas de incentivos, la falta de humanidad en los sistemas sin fricción, y la (histórica) rebeldía antisistémica de los juegos difíciles."
 tags:   [monster-hunter, ]
