@@ -2,7 +2,7 @@
 date:   2024-09-28
 title:  House of the Dragon S02
 description: Llenando huecos narrativos, cuestionamiento monárquico como tema, y cuidado con las mariposas.
-tags:   [house-of-the-dragon, spoilers]
+tags:   [house-of-the-dragon, ASOIAF, spoilers]
 image:  '/images/reviews/house-of-the-dragon-s02.jpg'
 category: [el-corgi-pretencioso, serie]
 ---

@@ -1,7 +1,7 @@
 ---
 date:   2022-10-25
 title:  House of the Dragon S01
-tags:   [house-of-the-dragon, spoilers-parciales]
+tags:   [house-of-the-dragon, ASOIAF, spoilers-parciales]
 image:  '/images/reviews/house_of_the_dragon_s01.jpg'
 category: [el-corgi-pretencioso, serie]
 ---
