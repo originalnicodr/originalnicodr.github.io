@@ -6,23 +6,23 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>How we made a high quality image gallery without paying a single dime</title>
-  <meta name='description' content='A dive into how the poor man's necessity sharpens one's problem solving ability (or how we took advantage of multiple million dollar companies' free services).'>
+  <title>10 years of code smell - Part I: Falling for CS</title>
+  <meta name='description' content='The advantages (and disadvantages) of computer science education and work, the magic of creating something out of nothing, and how I learned to stop worrying...'>
 
-  <link rel="canonical" href="https://originalnicodr.github.io/blog/how-we-made-a-high-quality-image-gallery-without-paying-a-single-dime">
+  <link rel="canonical" href="https://originalnicodr.github.io/blog/10-years-of-code-smell-falling-for-cs">
 
   
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="How we made a high quality image gallery without paying a single dime – Originalnicodr">
-  <meta name="twitter:description" content="A dive into how the poor man&apos;s necessity sharpens one&apos;s problem solving ability (or how we took advantage of multiple million dollar companies&apos; free services).">
-  <meta name="twitter:image" content="https://originalnicodr.github.io/images/blog/post-1.jpg">
+  <meta name="twitter:title" content="10 years of code smell - Part I: Falling for CS – Originalnicodr">
+  <meta name="twitter:description" content="The advantages (and disadvantages) of computer science education and work, the magic of creating something out of nothing, and how I learned to stop worrying and love the code.">
+  <meta name="twitter:image" content="https://originalnicodr.github.io/images/blog/10-years-of-code-smell-falling-for-cs.jpg">
 
   <!-- Facebook OpenGraph -->
-  <meta property="og:title" content="How we made a high quality image gallery without paying a single dime – Originalnicodr">
-  <meta property="og:description" content="A dive into how the poor man&apos;s necessity sharpens one&apos;s problem solving ability (or how we took advantage of multiple million dollar companies&apos; free services).">
-  <meta property="og:image" content="https://originalnicodr.github.io/images/blog/post-1.jpg">
+  <meta property="og:title" content="10 years of code smell - Part I: Falling for CS – Originalnicodr">
+  <meta property="og:description" content="The advantages (and disadvantages) of computer science education and work, the magic of creating something out of nothing, and how I learned to stop worrying and love the code.">
+  <meta property="og:image" content="https://originalnicodr.github.io/images/blog/10-years-of-code-smell-falling-for-cs.jpg">
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
@@ -160,7 +160,7 @@
       
       <div class="col col-6 col-d-12">
         <div class="post-image">
-          <img loading="lazy" src="/images/blog/post-1.jpg" alt="How we made a high quality image gallery without paying a single dime">
+          <img loading="lazy" src="/images/blog/10-years-of-code-smell-falling-for-cs.jpg" alt="10 years of code smell - Part I: Falling for CS">
         </div>
       </div>
       
@@ -169,24 +169,22 @@
         <div class="post__info">
 
           <div class="post__meta">
-              <time class="post__date" datetime="2021-09-18T00:00:00+00:00">18 Sep 2021</time>
+              <time class="post__date" datetime="2026-04-12T00:00:00+00:00">12 Apr 2026</time>
           </div>
 
           
           <div class="post-tags">
             
-              <a href="/tag/programming" class="post-tags__tag">programming</a>
+              <a href="/tag/10-years-of-code-smell" class="post-tags__tag">10-years-of-code-smell</a>
             
               <a href="/tag/project" class="post-tags__tag">project</a>
-            
-              <a href="/tag/virtual-photography" class="post-tags__tag">virtual-photography</a>
             
           </div>
           
 
 
 
-          <h1 class="post__title">How we made a high quality image gallery without paying a single dime</h1>
+          <h1 class="post__title">10 years of code smell - Part I: Falling for CS</h1>
 
           <div class="post__info-footer">
 
@@ -195,7 +193,7 @@
   
 
   
-    20 minute-read
+    22 minute-read
   
 </span>
 
@@ -206,7 +204,7 @@
     </div>
 
     
-    <p class="post__subtitle">A dive into how the poor man&#39;s necessity sharpens one&#39;s problem solving ability (or how we took advantage of multiple million dollar companies&#39; free services).</p>
+    <p class="post__subtitle">The advantages (and disadvantages) of computer science education and work, the magic of creating something out of nothing, and how I learned to stop worrying and love the code.</p>
     
   </div>
 </div>
@@ -217,148 +215,99 @@
   <article class="post">
 
     <div class="post__content">
-      <p>In the last couple of years, I’ve been getting more involved with virtual photography: the art and practice of photography in virtual environments such as videogames.</p>
+      <p>I have had this blog post in my mind for a while. After finding the source code of <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=652649833">this old project of mine</a> from the last year of high school I figured that it could be a good opportunity to not only make fun of my awful code from back then, but also to take a step back and reflect on where I am now, how I got here and what I learned since then. In the hopes of helping others walk a similar path if they so desire, or if this analysis of my own experience inspires others to reflect on their own careers as well.</p>
 
-<p>I’ve been actively participating in <b>Framed</b>, a small discord community of very talented virtual photographers. We share screenshots, give each other feedback, discuss techniques, develop tools, or just kick back and hang out. Since I joined, admins have used pinned shots in the channel where we share them to show new members the “best” of what the community had to offer and get a glance of what’s possible in the medium.</p>
+<p>As with most of the topics I enjoy discussing, I ended up writing quite a bit. So I decided to split this blog post in three parts, in case you want to skip one that you aren’t interested in. The first one, which is the one you are reading right now, is about why I ended up pursuing computer science, what I liked about the field, how it compared to other fields that I was also interested in but ultimately decided not to study (and the reasons behind that), and what I discovered that made me fall in love with CS.</p>
 
-<p>Unfortunately, for some reason, discord limits you to 50 pinned messages per channel. In order to pin new messages, admins had to unpin old ones. This was not an ideal approach. We thought that having a separate channel for showing the “best” shots would be nice. Some suggested that having a bot that could forward these “best” shots into a channel of their own would be closer to what we wanted. But that bot would have to be custom made as the specific features we required were too niche to exist. Fortunately for us, at that time I had a job interview coming up in a few weeks, so I figured I could practice some python while doing something useful with my time. And from the title of this article, you may have already tell that the project snowballed from there and ended up in a <a href="https://framedsc.github.io/HallOfFramed/">website</a> of its own.</p>
+<p>The second part will be a view on what I knew (or better, what I didn’t know) when I worked on the project that this series of blogposts is about, and, most importantly, a deep dive into the code. Analyzing how I could have made things better and showing how I was lucky to even know how to tie my own shoelaces back then, based on the intellectual level I was displaying. This might be useful for the folks who are studying programming-related fields and want to understand a bit about how bad code looks and why.</p>
 
-<p>Before getting deeper into this, “article” I guess? You should know that I won’t be talking in depth about the technical details behind the tools we used nor the design patterns I followed (or that at least tried to), since there is a ton of information about them online written by people way more capable and experienced than me. Instead, my approach with this post would be to present you with the problems we encountered along the way and the clever workarounds we managed to pull off, besides getting to talk about things I like without anyone interrupting me. Hope you enjoy it.</p>
+<p>And the third and last section goes a bit deep on what happened with that project, some conclusions I am taking away with me after this code analysis, and some further reading material if you feel like it.</p>
 
-<h2 id="the-original-plan">The original plan</h2>
+<p>Mind you, I am not an expert in the field. I am barely finishing my 4th year of professional experience, which I imagine is quite low for some of the folks who are reading this. My intention is not to insinuate that I am some kind of code guru, because there wouldn’t be anything I hate more than that. I am just a guy who has been making stuff for some years now, learned how not to do them fairly recently, and want to share those mistakes using my previous work and myself as a perfect punching bag.</p>
 
-<p>What we planned at first was a simple bot that read the amount of reactions a message with a shot had and, based on that, decide if it should send an embedded message like the image below with the screenshot and some extra information to another channel.</p>
+<p>Having said that, if you want to challenge some of my observations, either because you’re more experienced than I am or simply because you want to share your point of view, please do so! Let’s spark some discussion so we can all keep on improving our skills even further :)</p>
 
-<p align="center"><img src="/images/blog/post-1/botembed.png" /></p>
+<p>Hopefully, this series of write-ups ends up not only being an analysis of who I was back then, but also works as a time capsule for who I am now. And who knows, maybe I can come back in ten years to look at this and see how much of a moron I was back then. Because if we don’t think of our past selves as idiots, then have we really grown since then?</p>
 
-<p>The obvious question arises, how do we determine that a shot should be highlighted? We thought about using a prebuilt bot that added a reaction to every shot, and depending on the amount of people reacting to a specific emoji it would highlight it or not, but we didn’t want to change the way users interacts with the shots (which we didn’t completely manage to achieve, more on that later). Besides, we wanted to highlight shots retroactively since we had 2 years worth of them, so a more thoughtful solution was needed.</p>
-
-<p>What we ended up doing was counting the amount of unique users interacting with a shot through reactions, and if that number was higher than a trigger value then the shot was highlighted, easy peasy.</p>
-
-<p>Some fine details had to be decided though, like how far back the bot should check shots reactions to decide if it should highlight them, because checking every shot ever (which at that time were about 25k shots) was excessive and quite dumb honestly. We settled up with just checking shots that are less than 7 days old and it has worked quite well so far.</p>
-
-<p>So, with this now defined I was ready to start coding our little bot, but there was a catch. Since we wanted to highlight stuff retroactively, how can we decide on a trigger value when the oldest shots had so little reactions despite being great because of the server having less people at that time? The solution was, as many things in life, <b>MATH</b>.</p>
-
-<p>What I did was use a trigger value that changed using a linear interpolation between the trigger value the bot would be using when checking the shots of the last week and whatever seems fit to use for when the community first started. And after playing with a couple of values we reached some triggers that gave us a list of shots pretty well distributed across the almost two years of life the server had at the time. As it turned out, sometimes simple solutions work the best.</p>
-
-<p>Did you follow all of that? No? Don’t worry, what you have to get from this is that math is awesome.</p>
-
-<p>Because admins still wanted the ability to highlight shots manually (and because they hate democracy) I wrote a way for them to tell the bot to highlight a specific shot no matter the amount of reactions it has.</p>
-
-<p align="center"><img src="/images/blog/post-1/nodemocracy.gif" /></p>
-
-<h2 id="the-devil-is-in-the-details">The devil is in the details</h2>
-
-<p>Now it was finally time to start coding the damn thing. To do it I used <i>discordpy</i> python library which worked flawlessly and is very well documented. If you are planning on writing a bot of your own and are familiar with python you will feel very comfortable using it.</p>
-
-<p>An important part of making this was actually figuring out where to host the bot in question. I didn’t have to research much to find a website called <a href="https://www.heroku.com/">Heroku</a> that allowed hosting running python scripts for free, but of course, there was a catch (more than one actually). You can only run the bot a certain number of hours each month, which means having the bot offline for a few days at the end of the month. But, since the bot crashed from time to time and was back online whenever Heroku decided to reset their servers (and because the nature of the bot did not require it to be on 24/7) we were able to save some hours each week. Did we beat the system with negligence? Absolutely.</p>
-
-<p>Still was far from ideal. Heroku also offered a way to run the script using a scheduler, but after preparing the bot to work in that way I couldn’t use it either because I didn’t put money on the site. So, what we ended up doing was using one of those services that creates a virtual credit card with a limit of money on them (often used for creating accounts with free month promotions for ingressing your credit card like Netflix) to “verify” the account. And with that we cheated the system a second time.</p>
-
-<p>With this non-freemium account we didn’t need the scheduler anymore since we had the double amount of hours to run the script. This might not seem useful at first glance since a bot that highlights shots does not require to be on 24/7, but we figure we could add more functionalities as we came up with ideas, like letting the admins highlight whatever shot they want.</p>
-
-<p>Another one of those ideas was one that we talked about quite a lot since almost the beginning of the server: making a site where we show these highlighted shots.</p>
-
-<h2 id="the-site">The site</h2>
-
-<p>Now, a site might seem like a daunting idea, and it is. Fortunately some of the members have years of front-end experience, so I didn’t have to worry about the site myself, I just needed to provide a way for it to read the shot information provided by the bot. And with the expertise of more intelligent people than I, we reached the conclusion of using the JSON files for storing this information, at least for now.</p>
-
-<p>Fortunately, the server already had a static github site where we upload guides and information about how to take screenshots, so that was covered. And since all the shots are already on discord’s own servers, and one can access files uploaded to a server without being part of it, we also had a free host where our shots were already uploaded. Not only that, but if enough people boost the server, everyone can upload shots up to 50mb, so its ends up being a great way of storing high quality images.</p>
-
-<p>We actually had even more advantages going this route. We don’t have to pay extra if the traffic increase, discord doesn’t compress the shots like other services may do, and, according to the ever trusting internet people, its actually a <a href="https://alternativeto.net/list/149/reliable-long-term-image-hosting-sites-that-will-stand-the-test-of-time/">pretty good place to store files on the long run</a>.</p>
-
-<p>I am actually kinda surprised none thought of doing something like this before. Hopefully we aren’t taking advantage of discord’s free will (too much) and they change how things work. We did however looked it up and apparently we are not breaking any discord’s terms of services here, so please internet police officer, carry on.</p>
-
-<h2 id="databases-make-me-lazy">Databases make me lazy</h2>
-
-<p>Okay, we had our shots uploaded to a host, but we now needed a way of storing those links in our JSON file, so we needed some way of managing this file as a database. Because the database we needed would be way too small for a SQL database or something alike (and because I didn’t feel like dealing with real databases) we ended up using a python library called <i>TinyDB</i>, which is a <i>lightweight document oriented database optimized for your happiness</i> according to its docs, so it was exactly what we were looking for.</p>
-
-<p>Now we only needed a place to store and update over time the JSON file that would act as the database with the shots information, but one of Heroku’s limitations was that, when the servers are restarted (once a day at least) the files generated were deleted, so we couldn’t keep the JSON file there (besides, there wasn’t a way to access that file either, or at least that I am aware of). So, with the need to store this file somewhere and the desire to keep using rich companies’ resources for free I came up with the solution: <b>Github</b>.</p>
-
-<p>It was perfect, not only do they host the file freely in a repository and it can be accessed very easily but, as one could have imagined, there was already a python library that allowed me to interact with github called <i>gitPython</i>. Isn’t Python lovely?</p>
-
-<p>Before continuing on, I would like to point out that, if you ever play with this library to push a repository, don’t use your main github account credentials…</p>
-
-<p align="center"><img src="/images/blog/post-1/githubcommitsups.png" /></p>
-
-<h2 id="names-are-hard">Names are hard</h2>
-
-<p>Now, since we wanted to put these shots in a site, we figured it would be best to include the title of the game so the site was easier to use, so how do we find these?</p>
-
-<p>One of the (fairly recent) rules of this discord community is that the only text allowed in the channel where we share screenshots were the names of the games the shots were from. So what I ended up doing was, given a shot that the bot wanted to highlight, pick up the closer message (within a range of messages) with text from that same author. And if I am able to say it myself, it works wonderfully.</p>
-
-<p>Unfortunately this rule wasn’t a thing since the beginning of the server, so some of the shots of the earlier days of the community didn’t have the proper name attached to them (and a particular shot had a message so long that crashed the bot, shit happens I guess). Fortunately one member offered himself to correct the database manually to cover these cases (thank you Andy). And with that out of the way we were almost done!</p>
-
-<p>We did however have to think about the shot thumbnails. Since we wanted some kind of grid for the site, we couldn’t just load the original shots for every image displayed in the grid, it would be way too slow to load. So what do we do? We thought about maybe paying a host for the thumbnails, but I was stubborn to finish this project without paying a single penny, and after some minutes of going back and forth on the topic it finally hit me. We were already using discord as a host for the shots, why not also use it for hosting the thumbnails too? (Sorry discord devs, don’t hate us).</p>
-
-<h2 id="final-details-and-polishing">Final details and polishing</h2>
-
-<p>We still had to create said thumbnails tho. To do so we ended up using, you guessed it, another python library (without these python libraries we wouldn’t have had a chance with this project). This one is called <i>Pillow</i>, and it’s used to manipulate images in a lot of different ways. And after trying different combinations of resizing algorithms and formats we reached one we liked and were ready to move to the next task.</p>
-
-<p>At this point the site was working pretty solidly, altho I cannot give a lot of details about its implementation since I didn’t write it myself and because of my lack of knowledge of front-end development, but we had a prototype which we were iterating upon. One of the things I wanted to improve at this point was the author’s information. I thought that having some social media links from the author when seeing a shot on the site would encourage people to look at more stuff from that person.</p>
-
-<p>We had a channel in the community to share our social media links, portfolios sites, etc., so all I had to do was to tell the bot to save those links in another JSON database file. I also saved some info discord provided about an user so I could link every author’s shot in the shots database with the associated information in the authors database, and with that we were ready to go.</p>
-
-<p>I’ve talked a bit about these databases the bot created, which as you might have guessed, are kind of toy databases. So it’s worth to ask the question: Is it scalable?</p>
-
-<p>Well, it depends. It’s been 6 months since we launched the site, and it already has over 1700 shots, BUT the size of the shots DB file is only 800kb, which is practically negligible. If the size becomes a problem in the future (the bot has to redownload the database files every time heroku resets its servers, so it might be) maybe we could use a compression algorithm like gzip. What could be a problem is if the site would be able to use a file like this with so many entries, but I don’t have the front-end knowledge to know that. Databases way bigger than ours are being used by sites everyday, but they have proper databases systems and not some JSON file. The question is then if our method of handling the shots database will have to change with time, and my intuition says yes, but we can deal with that later on.</p>
-
-<p>And with that the bot was pretty much done! It was then up to the members that were working on the site to polish it before we could announce it to the world. How exciting!</p>
-
-<h2 id="the-aftermath">The aftermath</h2>
-
-<p align="center"><img src="/images/blog/post-1/hoflogo.png" /></p>
-
-<p>We released the <a href="https://framedsc.github.io/HallOfFramed/">Hall of Framed</a> (get it?) website the 12th of February of this year with a pretty nice reception. We originally built the site as a little extra of our internal highlighting system, but it has proven to be not only a little glimpse of what the members of the server can do, but as a card of presentation of the hobby as a whole to anyone who isn’t familiar with it. It’s safe to assume we were more than happy with the result.</p>
-
-<blockquote class="twitter-tweet" align="center" data-lang="en"><p lang="en" dir="ltr">FRAMED (@FramedSc) <a href="https://twitter.com/FramedSc/status/1360336268832440328?ref_src=twsrc%5Etfw">https://twitter.com/FramedSc/status/1360336268832440328?ref_src=twsrc%5Etfw</a></p>&mdash; FRAMED (@FramedSc) <a href="https://twitter.com/FramedSc/status/1360336268832440328?ref_src=twsrc%5Etfw"></a></blockquote>
-<script async="" src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-
-<blockquote class="twitter-tweet" align="center" data-lang="en"><p lang="en" dir="ltr">Jim2point0 (@jim2point0) <a href="https://t.co/mP1NPzi4JY">https://t.co/mP1NPzi4JY</a></p>&mdash; Jim2point0 (@jim2point0) <a href="https://twitter.com/jim2point0/status/1360297459168247817?ref_src=twsrc%5Etf"></a></blockquote>
-<script async="" src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-
-<blockquote class="twitter-tweet" align="center" data-lang="en"><p lang="en" dir="ltr">Petri Levälahti (@Berduu)) <a href="https://t.co/qi5CxRQ3j0">https://t.co/qi5CxRQ3j0</a></p>&mdash; Petri Levälahti (@Berduu) <a href="https://twitter.com/Berduu/status/1360311432684920832?ref_src=twsrc%5Etfw"></a></blockquote>
-<script async="" src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-
-<p>However there were some other unprecedented consequences. Even though I tried to approach the system without changing how people think about sharing their shots there was a factor I was not taking into account: how the mere existence of a “gallery” could already alter how people engage with sharing their shots.
-The close nature of the discord group meant that sharing a shot in the community was only meant to be seen by the members of it, since it’s not really a <i>social media platform</i> where you can share or retweet other people’s stuff. So instead of reaching for the whole internet’s approval in the form of imaginary internet points, we shared shots to ask for feedback, show what we came up with and yes, still expect internet people’s approval, but in an enclosed community. Which felt more honest in a way since there was no final goal, if that makes any sense. With the implementation of this gallery the goal, for a lot of people, changed (even unconsciously) from just sharing stuff in a selected group to trying to reach the site, which tied up with a topic some of you may already be familiar with, and that is social media anxiety.</p>
-
-<p>I am fortunate enough to not suffer it myself (yet), but I have seen how it can deteriorate someone’s mental health into smithereens. That feeling of thinking your work isn’t good enough because its not doing numbers had lead to severe consequences to some people, bringing a hobby they once enjoyed to something they despise.</p>
-
-<p>More than just merely our fault, I think the situation is more of a symptom caused by the larger social media platforms of today and our relationship with them. We weren’t anticipating stepping into such a vast and complex problem when designing this whole thing, so we were not really sure how to tackle it. So out of nowhere we were dealing with designing some “social media system” that doesn’t impact people’s mental health negatively, if that’s even possible.</p>
-
-<p>What we ended up doing for now was adding an option for users to opt out of the system with a role, so the bot could ignore shots from people with said role to help reduce the anxiety the system might cause them. Far from being the solution, it’s what we came up in the meantime while we reach for better ideas.</p>
-
-<p>The problem is, I believe, way larger than what some programmers can deal with in a project like this, but we believe that there is a better alternative for building a healthier relationship with social media platforms, even though changing them is probably against the companies monetary interests. Hopefully someone more capable (and probably with a more fitting background) can design an alternative like this in the future, but I am sure it would still require effort from us, the users, to make it work.</p>
-
-<p>That might have been a darker way of concluding this section than I anticipated. I do believe that if we were to put all the pros and cons that came out of this bot and site in a balance, the result would still be very positive.</p>
-
-<h2 id="so-what-did-i-learn">So, what did I learn?</h2>
-
-<p>I learned quite a few things as you might have expected. Besides obviously learning how to code a discord bot and how to handle async operations in python, I learned some lessons that I consider valuable enough to share (or at least they are for a dumb undegraduate computer science student with no work experience like myself):</p>
-
-<ul>
-    <li>
-    <b>- Python is one hell of a programming language:</b> I have experience with python from college, altho I had my problems with it. But after seeing how versatile it is with all the user created libraries, I now understand how powerful of a prototyping tool it is, and will definitely be using it whenever a new project allows it. Hopefully I don't grow too used to relying on other people's libraries since that can prove problematic, but only time will tell.
-    </li>
-    <li>
-    <b>- You can't make the perfect skeleton:</b> Even tho I did whatever I could to plan all of the bot features ahead, trying to design all the systems following design patterns, single-responsibility principle and all kind of stuff I learned at a course (which I still have to do the final, mind you), I learned that you can't plan out every possible feature that you haven't even thinked about no matter how far ahead you think. You won't be able to design your code in a way that all the features you come up later will be easy and pretty to implement. The experience of putting your project to test will be the only way to come up with all the features worth implementing. It's inevitable you will contract technical debt, which will have to be paid sooner or later.
-    </li>
-    <li>
-    <b>- Think how your code can affect people:</b> The last lesson I learned through this is how we, as programmers, probably don't have a notion on how much our software can impact other people, something that might be fairly common in the industry. Even though one can’t anticipate every single impact a project might have, not doing anything isn't the answer either. And giving at least some thought to the social and psychological impact our projects might have could be a good first step towards the right direction.
-    </li>
-</ul>
-
-<p>You can try out the site at <a href="https://framedsc.github.io/HallOfFramed/">framedsc.github.io/HallOfFramed</a> or look at its <a href="https://github.com/framedsc/HallOfFramed">source code</a> if you are interested in that sort of thing.
-And you can look up the bot’s code in <a href="https://github.com/originalnicodr/CuratorDiscordBot">its github repo here</a> (try not to be too judgmental, I am kinda behind that technical debt I talked about).</p>
-
-<p>Thank you so much to <a href="https://twitter.com/FransBouma">Otis_inf</a>, <a href="https://twitter.com/jim2point0">Jim2point0</a>, <a href="https://twitter.com/Freaksboi">Fraulk</a> and <a href="https://github.com/chocmake">Choc</a> for collaborating with this project. You are all truly wonderful.</p>
+<p>So if you are in for the ride, hope you enjoy reading me rambling about <em>stuff</em>.</p>
 
 <hr />
 
-<p>And that should be it, I apologise if this post wasn’t as technical as you might have expected (or dived too deep in details, depending on where you are coming from). It’s my first time writing anything like this so I am not expecting it to be the smoothest blog entry on the internet. I do hope however that it was an interesting read and you had at least a fraction of the fun I had while working on this and, more than anything, that I could successfully spread some of my passion for the project to you.</p>
+<h1 id="knowledge-is-power">Knowledge is power</h1>
 
-<p>Have a good one.</p>
+<p>Programming has always fascinated me since I was a kid. In middle school, I had this fantasy of being able to create my own games, which I imagine was pretty common for my generation. Going to the extent of messing around with RPG Maker, but I was too young to learn the ropes of what programming was even about. Fast forward to the technical high school with a focus in electronics I attended, and I was faced with the basic concepts of the field for the first time.</p>
+
+<p>Learning the ins and outs of these basic concepts felt like learning the actions in a puzzle game, with the difference that these would allow me to do anything (that is allowed by a <a href="https://en.wikipedia.org/wiki/Turing_completeness">Turing Complete language</a>, mind you). It felt very empowering at the time, and still does to some extent. Which is why, when pursuing a higher education at the university, I ended up choosing computer science instead of electronics.</p>
+
+<p>Despite being scared to do this switch (I even first enrolled in electronic engineering, and even did some of the introductory modules as well), I was very relieved to have my choice reconfirmed while I learned more about computer science as a whole, and about myself and my preferences. Turns out, math can be super fun and interesting (as long as it is discrete math and doesn’t involve those fake imaginary numbers engineers deal with). It made me realize a lot of things that I appreciate about the field and industry besides the ones I listed when comparing it to electronic engineering back then, when I had to make a choice. I have been thinking about these points for years now, having listed them in a note I keep around for when I am asked about career and industry options from younger folks or people thinking of switching careers. Which I will now talk about.</p>
+
+<p>The first aspect that I have learned to appreciate is the massiveness of information on the internet. The internet was originally conceived by programmers and electronic/system engineers back then, so such field topics have been present in the bus of information since day one. The amount of information you can find in any tangential topic is stupidly big, to the point that it has become a problem to actually filter the good stuff (which is even more relevant nowadays with the amount of AI slop spreading through our dear interweb).</p>
+
+<p>This might be obvious for anyone in the industry already, but it’s not an aspect I take for granted. Some years ago, I was tasked by a relative to look up a PDF for a specific technical dentist book (I know, I know, this is, however, the usual modus operandi of the free higher educational system of a third-world country), and I was surprised to find, well, that I couldn’t find it. It made me realize how lucky we are that, in computer science and software engineering, we get to read entire books, papers, and blog posts entirely for free, with some authors even putting their own books in HTML form for people to read them freely and reference them more easily in a day-to-day setting.</p>
+
+<p>It’s astonishing, really, how generous people are with their knowledge in computer science. This is, of course, also the case in various scientific fields where you can simply send an email to an author asking for a copy of their last paper, and they will most probably send it to you freely, no questions asked (which tends to happen because of how academic journals work, <a href="https://www.youtube.com/watch?v=ukAkG6c_N4M">it’s wild</a>). Maybe it’s because they are just happy that anyone is interested in what they want to say, and God knows how hard it is to find someone like that in an age where everyone has something to say, if such a comparison could be used with non-academic people.</p>
+
+<p>But in any case, if you are a curious mind with enough critical eye to distinguish what’s worth your time learning-wise, the internet is filled to the brim with blogs, books, and videos available for free. Hell, nowadays you even have entire <a href="https://www.youtube.com/playlist?list=PLUl4u3cNGP62A-ynp6v6-LGBCzeH3VAQB">computer science lectures and courses uploaded by MIT</a> freely on the internet. How many other fields have this volume of knowledge freely available at your fingertips?</p>
+
+<p>This amount of information available also means that, if you are dealing with a problem in your code, chances are you will find a thread or post from people experiencing the exact same thing, I must sound like a broken record at this point, but I don’t think a dentist would be able to look up online a problem they are having with a patient and get out with something to try at least (I am sure they are doing so with LLMs nowadays, with varying results and none to make responsible besides the person following the potentially hallucinated instructions).</p>
+
+<p>Granted, like the dentist, there probably are a lot of false positives and <a href="https://en.wikipedia.org/wiki/Gradient_descent">local minimums</a> that will detract you from the right path to reach the solution, but I still believe it’s a very useful source of knowledge to draw from, if you are conscious about its biases and limitations.</p>
+
+<p>This, however, has been shifting quite a bit since the explosion of LLMs, and how people interact with them, resulting in these error-&gt;potential solutions for things to not be out in the open anymore, and instead stay in the programmers’ LLMs chat of choice. I have little sympathy for Stack Overflow, both its active hostile userbase (or at least part of it) and how <a href="https://build5nines.com/stack-overflow-upset-over-users-deleting-answers-after-openai-partnership/">they treat the answers people give on the forums and their original commenter</a> have made me a bit disgusted with the platform in general, but knowing that this collective well of knowledge is getting dryer by the day is not great either.</p>
+
+<h1 id="open-source-and-the-holy-hobbyist">Open source and the holy hobbyist</h1>
+
+<p>One of the aspects I enjoy the most about this emphasis of the field in sharing knowledge is open source. It makes a lot of sense if you think about it, if <em>X</em> needs a software that does <em>A</em>, and <em>Y</em> also needs it then it doesn’t make sense to reinvent the wheel and to instead work together. There are innumerable advantages to this: transparency in the development process, anyone can try to contribute to it, big companies may come and sponsor the project to make sure it receives the support it needs for their usage, allowing a fork to survive if things go south, and so many more.</p>
+
+<p>The fact that you can find a niche project made by a dude in the Himalayas, that is useful to you and maybe 100 other people, and being able to collaborate together to make it better, feels like magic to me at times. It is one of the most fantastic experiences I have encountered when interacting with human beings on the internet.</p>
+
+<p>Also, the ability to use these personal projects of yours, being open source or not, as part of your portfolio and experience makes it even better. Showing to your potential employer what you are capable of in a more transparent way than solving some random leetcode (which I would argue is one of the bad aspects the field has), while also working on stuff that is fun to you, is a great way to justify spending time on hobby projects.</p>
+
+<p>…But that’s one of the problems, isn’t it? The fact that one must “justify” spending time having fun building stuff. The ever-increasing necessity of being so-called “productive”. Don’t get me wrong, I do love the fact that my day to day work is so closely related to what I would consider my hobbies (on a good day, that is), which is not something I see in other industries, but it’s a double edge sword. If the productivity mindset starts crippling what you once enjoyed, it can spoil the entire thing if left unchecked. I am lucky enough to have so many interests that I am rarely bored, but I would lie if I said that, after a long workday, I would want to keep doing “the same thing” instead of catching up with literally anything else. There is a reason burnout is so rampant in our profession, and it might be hard to see it when we are young, but I guess it’s good to keep it in mind. Remember, it’s not a race, it’s a marathon.</p>
+
+<p>The comparison might be a bit off topic here, but in his book ”Designing Games: A Guide to Engineering Experiences”, Tynan Sylvester mentions how, in the context of a game, if you are rewarded for doing an action, you might tie the feeling of fun with said reward instead of the action itself. And when the player stops receiving said reward, they find the activity dull or don’t feel like engaging with it anymore. As with the rest of the book, it is not difficult to interpret this in the context of using your same skillset to do personal projects that you use for your day work and get paid for.</p>
+
+<p>Maybe complaining about your work abilities, mixed with what you enjoy doing, is the kind of problem “high-class” citizens experience, and complaining about it might sound weird depending on who is there to listen. But mental effects aside, it’s undeniable how empowering it is to know that you can start most projects with just a computer and free time. It might seem like a romanticized author-y view of the engineering process, and one would still probably need investments depending on your expectations and necessities, but the feeling of having the ability to create out of nothing is magical, or at least that’s how it feels to me.</p>
+
+<h1 id="short-circuit">Short circuit</h1>
+
+<p>I talked about what I enjoyed about programming in general and why I decided to pursue computer science because of it, but I believe explaining why I didn’t pursue electronic engineering is just as enlightening as my earlier reasons for pursuing computer science—if not more. The main thing that drew me out of electronics is the physicality aspect of it. If there is a problem, actually diagnosing where it’s originating can be a long, arduous, and not pretty at all process. Because of all the moving parts, I always felt like the debugging process was full of friction.</p>
+
+<p>Now, mind you, software engineering in general (or in some of the places I have had the misfortune of working on) is no stranger to this. But I would argue, at least based on my experience, that despite all of the potential failure points, it still ends up being faster because of how quickly you can move through the whole process, as well as being able to, well, look up your problem on the internet. Still, relying on the past knowledge of internet minds is so incomprehensibly useful.</p>
+
+<p>The other characteristic of this physicality is the tools. Me being a HS kid I barely had the necessary tools to do things “the right way”. Sure, it’s useful to learn how to work with the minimum indispensable; it builds character, which is what most engineering universities here pride themselves upon, but I also don’t think romanticizing marginality and low budgets is the answer. In software, you may have some proprietary tools that make some aspects easier, but I have yet to hear from someone who argues that they can’t work without X. That’s mostly also in part because almost all the tools we use for work, including the operating system I am writing this on, are open source. So I would like to take this ooportunity to thank all of the open source developers for their contributions, as they will never receive the appreciation they deserve, and the current engineering landscape (and most services around the world) would be way worse without them.</p>
+
+<p>And of course, all of these points aren’t even taking into account what happens if something breaks/burns in the circuit that you are working on. “Oh, you burned this super-specific chip? Uff, bad luck champ, that is a 50 bucks mistake. What is that, you don’t have a replacement at hand? I guess you would have to wait 6 months for one from China to arrive, too bad”. In comparison, trying stuff in software doesn’t result in an economic hit, nor an irreparable damage, most of the time, that is (it’s always a good time to check that you are making backups of your data bases, dear reader).</p>
+
+<p>One could, of course, say it’s a skill issue, and you wouldn’t be wrong, but I have lost count of how many times I felt I was wasting time dealing with things unrelated to the problem I had. Like if these were an overhead to the real, actual problem I am trying to solve, and you are forced to walk back 5 steps when trying to advance just one. I do, however, have to say that I have gone multiple weeks dealing with stuff that wasn’t originally related to what I was trying to solve at work. I like to think this is often the exception and not the rule in programming. This also depends a lot on the technologies you are working with, of course. So if any of this resonated with you, don’t work on embedded systems.</p>
+
+<h1 id="working-hard-or-hardly-working">Working hard or hardly working?</h1>
+<p>There are other aspects that have been great perks from working in the field, like all of the work opportunities that are available. Sure, we are at a particularly low point in that regard, with companies firing left and right, overqualified people filling the market, and leaving no room for new junior hires. I wouldn’t like to be in a position to need to enter the workforce today, absolutely, but at the same time, my other professional friends who work in other industries have had a hard time trying to break in, if they even managed to do so at all. And with the ever increasing need for software maintenance, I like to believe that, at least eventually, people with the right skill and mindset will be able to enter if they want to.</p>
+
+<p>Because that’s another aspect of it, while other engineering fields might require you to be on site because of the physicality aspect, most branches of computer science and software engineering don’t require your presence in an office. This makes it great for companies to hire cheaper people abroad, increasing the number of job offers you have (but also increasing the number of applicants, depending on time zones and work permits). And of course only benefits folks in positions similar to mine, and makes it harder for people living where these companies tend to operate. To those folks, I am sorry that you have to go through this.</p>
+
+<p>Another aspect of this is the existence of jobs that offer relocation without the need for a formal degree to do so. I have had friends relocating to the UK with only a fraction of my formal education (granted, they are amazing engineers on their own), and it is not uncommon. But such a thing would not be the norm for other industries, and if there happens to be a relocation opportunity in those, chances are that you would eventually need to take some exams in order to get the necessary certificate to work in your field in that country, besides having gotten your degree here in the first place.</p>
+
+<p>Relocation is, however, not for everyone. And being able to work anywhere in the world, earning a pretty decent salary compared to what my friends and family are used to, must be one of the biggest advantages we have (although depending on the industry and branch of computer science you want to work with, it might be difficult to get an opportunity without relocating, sadly).</p>
+
+<h1 id="too-dumb-cool-for-school">Too <del>dumb</del> cool for school</h1>
+<p>Of course, I owe a lot to my formal education at the university, which, most importantly above all, gave me the tools to learn. I have tackled many side projects because of personal interest, and I was able to learn all the necessary languages and tools to do so, thanks to the baseline of knowledge I got from it. If I could give a recommendation to anyone interested in pursuing a computer science adjacent degree is to look for one that teaches concepts, not technologies. Having said that, I have been taught so many “concepts” while working on my degree that working on an average software company feels a lot like killing a mosquito with a bazooka.</p>
+
+<p>Despite me praising the field because of the opportunities it has, how its currently treating those without a formal degrees, and how it looks like there is never enough people to fill all positions (or at least, it used to), having a formal degree under your belt (or at least the knowledge and way of thinking that one helps you develop) will make a world of difference to make you stand out across other applicants in what I believe would be a future filled with people that “know how to code”. All of these free courses and lectures that companies have been offering for over a decade now, besides an opportunity to train their own employees, are an attempt to massify the market of potential workers so as to raise the competition with each other and bring salaries down. I believe we are not that far from there, if we are not there already, so whatever you decide to pursue, there are worse choices than trying to get a uni degree, even if the only worth it has for you is writing it down in your resume. Or maybe this is just me trying to justify the 8 years it took me to get my degree, but I guess time will tell.</p>
+
+<p>And it’s quite ironic if you think about it, because for all of what the university taught me, it didn’t teach me how to write “good code”. Which checks out when you start seeing code written by people in academia, I guess (fittingly enough, my master’s thesis code was also pretty bad). That’s not to say that the knowledge you get when studying a degree like computer science is useless. I want to believe that all of those subjects I studied back then (or at least most of them) molded my mind and way of thinking to what it is today, and inform my every decision at work. And the ability to write “good code” is the type of stuff that you can, no, must, learn outside of an academic institution and out in the field. It’s by no means easier, and you have to not only look for places that push for that code to be of quality, but also be open to absorbing how more senior people write code and question your own. It feels like a never ending race, but it’s one of the aspects in this field that I am always looking forward to.</p>
+
+<p>So, if you happen to be studying a degree and get frustrated about all of these seemingly useless math and functional programming topics you are forced to learn, I get it. You want to go out, do a webdev course, and start doing what you actually enjoy, which is making stuff. Because you know your shit and what you need to do to get where you want to, right? Well, maybe consider that the things that you would learn in these formative years you may not get anywhere else, and that after those, you will have the rest of your life to learn what the industry wants you to know.</p>
+
+<p>Most of the time, it’s not the topic itself that is important, but what surrounds it. Being able to get better at absorbing and internalizing new information, and thinking about problems abstractly, by solving them in progressively increasing difficulty with the presence of a safety net, is something that, I believe, doesn’t exist organically in a work environment, and genuinely makes you a better engineer.</p>
+
+<p>Absolutely take this with a grain of salt, but despite its problems, the number of coworkers I have had who don’t regret their time at the university vastly outnumbers the ones who wish they hadn’t pursued it.</p>
+
+<hr />
+
+<p>The second part of this series, in which we discuss how bad the code from this old project of mine is and how things should have gone instead, will be posted at a later date.</p>
+
+<p>Hope you enjoyed reading this one! Have a good one.</p>
 
     </div>
 
@@ -369,19 +318,19 @@ And you can look up the bot’s code in <a href="https://github.com/originalnico
   <ul class="share__list list-reset">
     <li class="share__item">
       <a class="share__link share__twitter"
-        href="https://twitter.com/intent/tweet?text=How%20we%20made%20a%20high%20quality%20image%20gallery%20without%20paying%20a%20single%20dime&url=https://originalnicodr.github.io/blog/how-we-made-a-high-quality-image-gallery-without-paying-a-single-dime"
+        href="https://twitter.com/intent/tweet?text=10%20years%20of%20code%20smell%20-%20Part%20I:%20Falling%20for%20CS&url=https://originalnicodr.github.io/blog/10-years-of-code-smell-falling-for-cs"
         onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
         title="Share on Twitter" rel="nofollow"><i class="ion ion-logo-twitter"></i></a>
     </li>
     <li class="share__item">
       <a class="share__link share__facebook"
-        href="https://www.facebook.com/sharer/sharer.php?u=https://originalnicodr.github.io/blog/how-we-made-a-high-quality-image-gallery-without-paying-a-single-dime"
+        href="https://www.facebook.com/sharer/sharer.php?u=https://originalnicodr.github.io/blog/10-years-of-code-smell-falling-for-cs"
         onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
         title="Share on Facebook" rel="nofollow"><i class="ion ion-logo-facebook"></i></a>
     </li>
     <li class="share__item">
       <a class="share__link share__linkedin"
-        href="https://www.linkedin.com/shareArticle?mini=true&url=https://originalnicodr.github.io/blog/how-we-made-a-high-quality-image-gallery-without-paying-a-single-dime&title=How%20we%20made%20a%20high%20quality%20image%20gallery%20without%20paying%20a%20single%20dime&summary=A%20dive%20into%20how%20the%20poor%20man's%20necessity%20sharpens%20one's%20problem%20solving%20ability%20(or%20how%20we%20took%20advantage%20of%20multiple%20million%20dollar%20companies'%20free%20services).&source=Originalnicodr"
+        href="https://www.linkedin.com/shareArticle?mini=true&url=https://originalnicodr.github.io/blog/10-years-of-code-smell-falling-for-cs&title=10%20years%20of%20code%20smell%20-%20Part%20I:%20Falling%20for%20CS&summary=The%20advantages%20(and%20disadvantages)%20of%20computer%20science%20education%20and%20work,%20the%20magic%20of%20creating%20something%20out%20of%20nothing,%20and%20how%20I%20learned%20to%20stop%20worrying%20and%20love%20the%20code.&source=Originalnicodr"
         onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
         title="Share on LinkedIn" rel="nofollow"><i class="ion ion-logo-linkedin"></i></a>
     </li>
@@ -431,9 +380,7 @@ And you can look up the bot’s code in <a href="https://github.com/originalnico
                 
                 
                   
-                    <a href="/tag/programming" class="section__link related-tag">See all<span> programming</span> <i class="ion ion-md-arrow-forward"></i></a>
-                  
-                
+                    <a href="/tag/10-years-of-code-smell" class="section__link related-tag">See all<span> 10-years-of-code-smell</span> <i class="ion ion-md-arrow-forward"></i></a>
                   
                 
                   
@@ -451,61 +398,6 @@ And you can look up the bot’s code in <a href="https://github.com/originalnico
             
       
             
-              <!--bookshop-live name(blog-card/blog-card.jekyll.html) params(post=post) context(post=site.posts[0]) -->
-          
-<div class="c-blog-card col col-4 col-d-6 col-t-12">
-  <div class="c-blog-card__inner">
-
-    
-    <div class="c-blog-card__image-wrap">
-      <a class="c-blog-card__image" href="/blog/10-years-of-code-smell-falling-for-cs">
-        <img loading="lazy" src="/images/blog/10-years-of-code-smell-falling-for-cs.jpg" alt="10 years of code smell - Part I: Falling for CS">
-      </a>
-    </div>
-    
-
-    <div class="c-blog-card__content">
-
-      
-      <div class="c-blog-card__tags-box">
-        
-        <a href="/tag/10-years-of-code-smell" class="c-blog-card__tag">10-years-of-code-smell</a>
-        
-        <a href="/tag/project" class="c-blog-card__tag">project</a>
-        
-      </div>
-      
-
-      <h2 class="c-blog-card__title">
-        <a href="/blog/10-years-of-code-smell-falling-for-cs">10 years of code smell - Part I: Falling for CS</a>
-      </h2>
-
-      <p class="c-blog-card__excerpt">
-        The advantages (and disadvantages) of computer science education and work, the magic of creating something out of nothing, and how I learned to stop worrying and love the code.
-      </p>
-
-      <div class="c-blog-card__meta">
-
-        
-<span class="reading-time" title="Estimated read time">
-  
-
-  
-    22 minute-read
-  
-</span>
-
-        <span class="date"><time datetime="2026-04-12T00:00:00+00:00">12 Apr 2026</time></span>
-
-      </div>
-
-    </div>
-  </div>
-</div>
-          <!--bookshop-live end-->
-            
-                
-              
             
             
             
@@ -861,7 +753,7 @@ And you can look up the bot’s code in <a href="https://github.com/originalnico
   
 
   
-    24 minute-read
+    27 minute-read
   
 </span>
 
@@ -1114,6 +1006,63 @@ And you can look up the bot’s code in <a href="https://github.com/originalnico
             
       
             
+              <!--bookshop-live name(blog-card/blog-card.jekyll.html) params(post=post) context(post=site.posts[79]) -->
+          
+<div class="c-blog-card col col-4 col-d-6 col-t-12">
+  <div class="c-blog-card__inner">
+
+    
+    <div class="c-blog-card__image-wrap">
+      <a class="c-blog-card__image" href="/blog/how-we-made-a-high-quality-image-gallery-without-paying-a-single-dime">
+        <img loading="lazy" src="/images/blog/post-1.jpg" alt="How we made a high quality image gallery without paying a single dime">
+      </a>
+    </div>
+    
+
+    <div class="c-blog-card__content">
+
+      
+      <div class="c-blog-card__tags-box">
+        
+        <a href="/tag/programming" class="c-blog-card__tag">programming</a>
+        
+        <a href="/tag/project" class="c-blog-card__tag">project</a>
+        
+        <a href="/tag/virtual-photography" class="c-blog-card__tag">virtual-photography</a>
+        
+      </div>
+      
+
+      <h2 class="c-blog-card__title">
+        <a href="/blog/how-we-made-a-high-quality-image-gallery-without-paying-a-single-dime">How we made a high quality image gallery without paying a single dime</a>
+      </h2>
+
+      <p class="c-blog-card__excerpt">
+        A dive into how the poor man's necessity sharpens one's problem solving ability (or how we took advantage of multiple million dollar companies' free services).
+      </p>
+
+      <div class="c-blog-card__meta">
+
+        
+<span class="reading-time" title="Estimated read time">
+  
+
+  
+    20 minute-read
+  
+</span>
+
+        <span class="date"><time datetime="2021-09-18T00:00:00+00:00">18 Sep 2021</time></span>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+          <!--bookshop-live end-->
+            
+                
+              
             
             
             
