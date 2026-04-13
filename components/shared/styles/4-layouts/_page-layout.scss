@@ -1,7 +1,7 @@
 /* Page + Post + Project */
 .post-top,
 .page-top {
-	padding: 48px 0 80px;
+	padding: 48px 0 40px;
 
 
 	.row {
@@ -151,6 +151,22 @@
 
 .page__title {
 	margin-bottom: 0;
+}
+
+.post__subtitle {
+	margin-bottom: 0;
+	font-size: 21px;
+	line-height: 1.5;
+	font-style: italic;
+
+	@media only screen and (max-width: $tablet) {
+		font-size: 18px;
+	}
+
+	@media only screen and (max-width: $mobile) {
+		margin-top: 26px;
+		font-size: 20px;
+	}
 }
 
 .post__meta {

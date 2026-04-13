@@ -43,6 +43,10 @@ layout: default
         </div>
       </div>
     </div>
+
+    {% if page.description %}
+    <p class="post__subtitle">{{ page.description | escape }}</p>
+    {% endif %}
   </div>
 </div>
 
