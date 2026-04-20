@@ -1,0 +1,1483 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>10 years of code smell - Part II: Self archeology</title>
+  <meta name='description' content='The common sense of the good practices, and the horror of gazing into your old code so long that it gazes back.'>
+
+  <link rel="canonical" href="https://originalnicodr.github.io/blog/10-years-of-code-smell-self-archeology">
+
+  
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="10 years of code smell - Part II: Self archeology – Originalnicodr">
+  <meta name="twitter:description" content="The common sense of the good practices, and the horror of gazing into your old code so long that it gazes back.">
+  <meta name="twitter:image" content="https://originalnicodr.github.io/images/blog/10-years-of-code-smell-self-archeology.jpg">
+
+  <!-- Facebook OpenGraph -->
+  <meta property="og:title" content="10 years of code smell - Part II: Self archeology – Originalnicodr">
+  <meta property="og:description" content="The common sense of the good practices, and the horror of gazing into your old code so long that it gazes back.">
+  <meta property="og:image" content="https://originalnicodr.github.io/images/blog/10-years-of-code-smell-self-archeology.jpg">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+
+  <!-- Ionicons -->
+  <link href="https://unpkg.com/ionicons@4.5.0/dist/css/ionicons.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="stylesheet" href="/assets/spoiler-tag.css">
+
+  <script src="https://code.jquery.com/jquery-2.0.3.min.js"></script>
+  <script src="../../js/album/jquery.swipebox.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery.swipebox/1.4.4/css/swipebox.min.css">
+  <meta name="google-site-verification" content="lKjy4N2ySkMpOrcLwEzSnOUG5-_wtxIbDRcz1dR8iI4" />
+
+  <meta name="google-site-verification" content="bzZtAb80hkoQE2mq8rT3mUyCRYenn2C0VSxqoIlEZTs" />
+</head>
+
+<body>
+    <!-- begin header -->
+<header class="c-header">
+  <div class="container">
+    <div class="row">
+      <div class="c-header__inner">
+
+        <div class="logo">
+          
+            <a class="logo__link" href="/">
+              <img class="logo__image" src="/images/corgi.jpg" alt="Originalnicodr">
+            </a>
+          
+        </div>
+
+        <nav class="main-nav">
+          <div class="main-nav__box">
+
+            <div class="nav__icon-close">
+              <i class="ion ion-md-close"></i>
+            </div>
+
+            <div class="nav__title">Menu</div>
+
+              <!--bookshop-live name(dark-mode-toggler.jekyll.html) params() context() -->
+          <a class="dark-mode-button" onmouseover="" style="cursor: pointer;">
+  <i class="ion ion-md-moon"></i>
+</a>
+
+<script src="https://cdn.jsdelivr.net/npm/darkreader@4.9.44/darkreader.js"></script>
+<script src="../../js/dark-mode.js"></script>
+
+          <!--bookshop-live end-->
+
+              <ul class="nav__list list-reset">
+
+              
+                
+                <li class="nav__item">
+                  <a href="/" class="nav__link">Home</a>
+                </li>
+                
+              
+                
+                <li class="nav__item">
+                  <a href="/blog/" class="nav__link">Blog</a>
+                </li>
+                
+              
+                
+                  
+
+                
+              
+                
+                <li class="nav__item">
+                  <a href="/projects/" class="nav__link">Projects</a>
+                </li>
+                
+              
+                
+                <li class="nav__item">
+                  <a href="/virtual-photography/" class="nav__link">Virtual Photography</a>
+                </li>
+                
+              
+                
+                <li class="nav__item">
+                  <a href="/about/" class="nav__link">About</a>
+                </li>
+                
+              
+
+            </ul>
+          </div>
+
+          <!--bookshop-live name(social-link.jekyll.html) params() context() -->
+          
+<div class="social">
+  <ul class="social__list list-reset">
+    
+    <li class="social__item">
+      <a class="social__link" href="https://twitter.com/originalnicodr" target="_blank" rel="noopener" aria-label="twitter icon"><i class="ion ion-logo-twitter"></i></a>
+    </li>
+    
+    <li class="social__item">
+      <a class="social__link" href="https://github.com/originalnicodr" target="_blank" rel="noopener" aria-label="github icon"><i class="ion ion-logo-github"></i></a>
+    </li>
+    
+    <li class="social__item">
+      <a class="social__link" href="https://www.linkedin.com/in/nicol%C3%A1s-uriel-navall-b38022174/" target="_blank" rel="noopener" aria-label="linkedin icon"><i class="ion ion-logo-linkedin"></i></a>
+    </li>
+    
+    <li class="social__item">
+      <a class="social__link" href="mailto:niconavall@gmail.com" target="_blank" rel="noopener" aria-label="icon"><i class="ion ion-md-mail"></i></a>
+    </li>
+  </ul>
+</div>
+
+          <!--bookshop-live end-->
+        </nav>
+
+        <div class="nav-button">
+          <i class="nav__icon nav__icon-menu ion ion-md-menu"></i>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</header>
+<!-- end header -->
+
+    <div class="post-top">
+  <div class="container">
+    <div class="row">
+
+      
+      <div class="col col-6 col-d-12">
+        <div class="post-image">
+          <img loading="lazy" src="/images/blog/10-years-of-code-smell-self-archeology.jpg" alt="10 years of code smell - Part II: Self archeology">
+        </div>
+      </div>
+      
+
+      <div class="col col-6 col-d-12">
+        <div class="post__info">
+
+          <div class="post__meta">
+              <time class="post__date" datetime="2026-04-20T00:00:00+00:00">20 Apr 2026</time>
+          </div>
+
+          
+          <div class="post-tags">
+            
+              <a href="/tag/10-years-of-code-smell" class="post-tags__tag">10-years-of-code-smell</a>
+            
+              <a href="/tag/project" class="post-tags__tag">project</a>
+            
+          </div>
+          
+
+
+
+          <h1 class="post__title">10 years of code smell - Part II: Self archeology</h1>
+
+          <div class="post__info-footer">
+
+            
+<span class="reading-time" title="Estimated read time">
+  
+
+  
+    34 minute-read
+  
+</span>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+    <p class="post__subtitle">The common sense of the good practices, and the horror of gazing into your old code so long that it gazes back.</p>
+    
+  </div>
+</div>
+
+<!-- begin post -->
+<div class="container animate">
+
+  <article class="post">
+
+    <div class="post__content">
+      <p>This is the second part of a series of articles I wrote based on an <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=652649833">old project I did when I was finishing high school 10 years ago</a>. <a href="./10-years-of-code-smell-falling-for-cs">The first part</a> is about my decision regarding following computer science as a field, and what I enjoy about it, while in this blog post, we will sink our teeth right into this <a href="https://github.com/originalnicodr/SteamLevelCalculator">god forsaken project source code</a>. Mind you, it’s absolutely rotten.</p>
+
+<p>As explained in the previous part, please feel free to disagree with the observations I am making in this post. After all, if there is one place where to argue and get angry at each other, it is the internet.</p>
+
+<h1 id="the-context-of-my-lack-of-technical-abilities-and-the-evolving-influence-of-open-source">The context of my (lack of) technical abilities and the evolving influence of open source</h1>
+
+<p>Okay, let’s first talk about what the project was (is?) about. Back then, I was very into Steam as a social platform. I made a lot of friends on adjacent gaming forums and would spend a lot of time interacting with them and working on my Steam profile. One of the aspects that Steam introduced shortly after I started using it to play Dota 2 was <a href="https://steamcommunity.com/tradingcards/">the improved social stuff</a>, which came with better-looking profiles, a lot of opportunities to customize them, and of course, a lot of opportunities to monetize said customization.</p>
+
+<p>Among all the new stuff, they added this concept of “profile” levels, which could be increased by crafting badges using cards from games, and when doing so it would give you more friend slots every level and more showcase sections on your profile every 10 levels, besides other misc stuff. So increasing your level was not only relevant for your social status, but had practical uses if you were running out of friend slots too. Those two relationships between levels and rewards were fun to think about, and I thought that having some sort of calculator that did the math for you could be useful to me and others. Therefore, the idea of working on something like that hung around in my mind during my high school years.</p>
+
+<p>So, in the far year 2016, we were using this IDE called <a href="https://en.wikipedia.org/wiki/SharpDevelop">SharpDevelop</a> at school, which had an integration with .NET to develop visual applications. Coming from C, this was my first experience with developing software where the user didn’t have to interact with a terminal, so I was pretty enthusiastic about it. Mind you, back then, I had no idea what any of this meant. I thought that I was doing <a href="https://en.wikipedia.org/wiki/Object-oriented_programming">object oriented programming</a> because I was working with UI, nor did I even understand what made C# apart from plain C.</p>
+
+<p>There were a lot of things I didn’t know about, nor did I even know I didn’t understand, back then. One of the most important ones was <a href="https://en.wikipedia.org/wiki/Version_control">version control</a>. Interestingly enough, it’s not something you are even taught about directly at the university. If you don’t have a professor or a classmate who goes out of their way to teach you about it, chances are you might go all the way through your whole degree uploading your updated code files to a Google Drive or moving around a pendrive. It might seem crazy in retrospect that this doesn’t have more visibility while studying a computer science degree, yet it seems to be a predominant problem across a lot of universities around the world that its one of the modules in the <a href="https://missing.csail.mit.edu/">missing semester series</a> (which I strongly recommend checking out the topics of if you have never heard about it). I guess I am not surprised, having seen the quality of software development in academia nowadays, but if people in the higher levels of education weren’t even aware of what the standard was for the industry to make changes to a project codebase, then what chances did I have at my final year of high school to know about it? Nowadays, I consider it such an important part of my workflow, both for my day-to-day work as well as for personal projects, that I wouldn’t feel comfortable at all working without it.</p>
+
+<p>One of the other important things I didn’t know about back then was the concept of open source. I have gushed a lot about it in <a href="./10-years-of-code-smell-falling-for-cs">the previous blog post</a>, but I believe it’s still worth mentioning how relevant a concept it is for software development in general. Let’s paint the picture. I was interested in creating this dumb calculator for Steam profile levels. All I knew about was how to code in this weird IDE that spat out a binary that could be interacted with a UI. Why would someone download a random person’s exe from the internet? Few things are more dangerous than that. So offering the source code of said project would have given all of the transparency that you would need (and put me on the spot by showing awful, awful code in the process). And, the fact that I was not planning on charging for it and was only interested in people using it made it a perfect candidate to have as an open source project.</p>
+
+<p>Interestingly enough, judging by the state of a lot of free software from 10+ years ago, open source wasn’t necessarily the norm. Sure, you are not forced to share the code of your free project that you have worked so hard on, but it seems that the movement itself has been dragging more and more people over the years, maybe as a response to the ever increasing requirements of paid subscription and software everywhere? Or maybe because more people became aware of it and understood the benefits that open source presented, aligned with the intentions of their projects. Despite the problems open source has (maintainers, specially for big projects used by multiple companies, should get paid for their time, to just mention one), I find it very altruistic that people freely dedicate time to work on stuff they believe is fun or useful. Such a selfless mentality is something that I very much appreciate from it, and I believe the industry wouldn’t be the same without it, for better or worse.</p>
+
+<p>There were also some technical aspects that I didn’t understand back then, like pointers, and, to my frustration, webdev. The project that I had in mind would have fit perfectly as a webpage because of the friction that represents downloading an exe. Being able to use this from a web browser would have not only solved this trust problem I mentioned that open source would have also solved, but it would have also opened the door for people to just log in with their Steam accounts using Valve’s method, and so the user wouldn’t have to write down their level to use the calculator.</p>
+
+<h1 id="watch-out-wild-side-effects-live-in-tall-grass">Watch out! Wild side effects live in tall grass!</h1>
+
+<p>Before taking a deep dive of all the sins I committed while writing this god forsaken project, I want to emphasise how a lot of the things that I criticize here and offer alternative solutions to might, ideally, include caveats or exceptions. I won’t be mentioning all of them because otherwise this post would never end, and it’s not precisely what I am interested in presenting here. Having said that, if you believe it’s worth <del>fighting me</del> confronting some of these ideas, please feel free to do so in the comments.</p>
+
+<p>You can find this eldritch source code in <a href="https://github.com/originalnicodr/SteamLevelCalculator">this Github repository</a> (which I created just some years ago to archive it), but I will try to include reference to the parts of the code I am talking about whenever I can.</p>
+
+<p>The first thing I noticed in this codebase, written by what one would suppose is a terrorist, was <a href="https://github.com/originalnicodr/SteamLevelCalculator/blob/main/Calculadora%20de%20niveles/MainForm.cs#L21">the global variables</a>. Entire chapters of books have been written about how bad they are and how you should avoid them at all costs, so I will try to keep it as brief as I can.</p>
+
+<p>The most ferocious problem with global variables, I would argue, is <a href="https://en.wikipedia.org/wiki/Side_effect_(computer_science)">side effects</a> and execution flow. In an industry so defined by OOP way of thinking (as long as its used as a guideline and not a bible), random variables floating in the aether in which any object can interact with will give you a lot of headaches further down the line when debugging, because you WILL have to debug. A class interacting with a global variable here, another one interacting with it there, makes it so that any class can modify this global state without it being necessarily reflected in the arguments of the function being executed, its return value, or the members of the class. Limiting the class to only modifying its own state or the ones from its <a href="https://en.wikipedia.org/wiki/Dependency_injection">injected dependencies</a>, and the variables its receives as arguments in a function or the value it returns from it means that the way the class interacts with the rest of the codebase is transparent, easier to track, and avoids “side effects” that would make it very painful to debug.</p>
+
+<p>And that problem is exacerbated when multiple threads enter the equation. <a href="https://en.wikipedia.org/wiki/Parallel_computing#Race_conditions,_mutual_exclusion,_synchronization,_and_parallel_slowdown">Race conditions</a> are already hard to deal with, so introducing global variables whose state can be modified from any running thread is a recipe for disaster. If you have no other choice than to do this, make sure you interact with said variable with its proper <a href="https://en.wikipedia.org/wiki/Lock_(computer_science)">mutex</a>, or consider using atomics or a similar concept in your language of choice, but know that you may still have to deal with such problems.</p>
+
+<p>At the end of the day, all of the things I talk about here aren’t dogmas that some dork 30 years ago came up to add uncalled structure to the field. These exist to make your life as a programmer easier.</p>
+
+<p>Another problem that global variables present is their scope. Depending on the language that you are working on, you may include a header from a library that happens to be using the same name as your global variable for something else, like a function or a class, or hell, even their own very badly designed global variable. And when that happens, you won’t have access to your own and would feel very bad about it.</p>
+
+<p>Mind you, there are ways of mitigating such issues, like using <a href="https://en.wikipedia.org/wiki/Namespace">namespaces</a> to limit the scope of where these things live, but like when driving, always consider that the library you are using could have been written by a stupid drunk. Doing so would save you from unhappy surprises.</p>
+
+<p>There has been an attempt of, if not standardizing, at least formalizing, the concept of global variables in the form of the <a href="https://en.wikipedia.org/wiki/Software_design_pattern">design pattern</a> called <a href="https://refactoring.guru/design-patterns/singleton">Singleton</a>. It is, of course, more complex than simply declaring a variable in a global scope, but they introduce a problem that global variables may not have, which is initialization.</p>
+
+<p>The way Singletons work is that given a class, you have a function that returns the unique instance of such a class, like instance(), so that you have access to the same object anywhere by just having access to the class. And if this unique instance has not been created yet, then the instance function will create it for you. The problem this introduces is that, if you happen to need an instance in another place, and the execution path there happens before the instance call that is currently being called first, it can mess up with your project if that singleton depends on other stuff to be created and/or initialized first.</p>
+
+<p>All of this is to say, Singletons (and, to an extent, globally accessible variables) do have a spot depending on the context. For example, in gamedev, systems tend to interact and intertwine with each other so much that it’s natural to want to access certain parts of the architecture from everywhere. In such cases, it is recommended to have a single singleton that holds all of the game state in one place, with unique instances of every class you would need throughout the game as members, and all of them initialized in the same easy-to-read place. If you want to read more about Singletons, their uses and issues, I highly recommend <a href="https://gameprogrammingpatterns.com/singleton.html">the Singleton chapter</a> from the “Game Programming Patterns” book.</p>
+
+<p>Having said all of that, the global variables I had in my project weren’t even close to needing to be global states, as that decision did not have any thought behind it and was made out of pure ignorance (like the rest of the project, I would say). Instead, like I wrote in my first suggestion, this should have been written without side effects, where the results were given as proper return values.</p>
+
+<h1 id="the-never-ending-search-for-a-good-name">The never-ending search for a good name</h1>
+
+<p>The other immediate thing that came to mind when reading code I wrote when I was a teen was the names of variables and functions. There is this concept in software engineering about code being <a href="https://en.wikipedia.org/wiki/Self-documenting_code">self documenting</a>, which is the gist of it: naming variables, functions, and everything in a way that is descriptive, and doesn’t need an extra comment to explain what it is or what it does. Doing so means giving other people who work on the project an easier time getting the context of what you have written if they need to modify something there.</p>
+
+<p>Ironically, the names I chose for this project are so bad that english speakers would have as much of a hard time as spanish speaking folks, because the variables aren’t even words that can be understood in either language.</p>
+
+<p>I did include comments in the code in the hopes of “writing good, understandable” code tho. However, besides the false premise, the comments themselves were in Spanish. I won’t blame my teenage ass for not writing in english as I barely remembered things I learned when I formally studied it in an institute in middle school back then. However, I am ashamed to admit that I never thought about writing in english until I basically got laughed at in my first technical interview.</p>
+
+<p>It is, however, almost funny how reading such indescriptible names in my code made it seem like it was <a href="https://en.wikipedia.org/wiki/Obfuscation_(software)">obfuscated</a>, or <a href="https://en.wikipedia.org/wiki/Source-to-source_compiler">transcompiled</a>. I am surprised that it didn’t turn on any alarm in my head while I was working on it, but I guess I was just under the philosophy of “make it work at all costs”. The idea that, even if people wouldn’t admit it, a lot of the industry is still working under, unfortunately.</p>
+
+<p>Having said all of that though, one question organically arises. What is a “good name”? A good name must be descriptive, sure, and should instantly tell you what the thing is supposed to do. However, wouldn’t using a superDescriptiveLongName be unnecessarily verbose? How specific should we be? Where do we draw the line? Should this class that creates and handles the life of other objects be called a manager, despite the term being so bastardized by the industry that it feels it doesn’t mean anything anymore? As you can see, there are a lot of places the mind can go when deciding on a name. But don’t feel bad if you have a hard time with this, because as Mr Karlton once said, “There are only two hard things in computer science: cache invalidation and naming things”.</p>
+
+<p align="center"><img src="/images/blog/10-years-of-code-smell-self-archeology/naming_styles_by_science.png" /></p>
+
+<p>All of this, and honestly, a lot of good engineering principles now that I think about it, can be traced down to “use common sense to write things that make sense, and don’t write things that don’t”. Which is, of course, easier said than done. But I believe writing software in a way that it’s easier to read and understand is closer to this idea than others may give credit to.</p>
+
+<h1 id="what-came-first-the-encapsulated-egg-or-parnas-principle">What came first, the encapsulated egg or Parnas principle?</h1>
+
+<p>Another thing that I noticed regarding these comments is how my way of structuring code changed over the years. Some of these comments basically explained what a block of code did, which, you know, it’s useful, but not so self documenting, is it? Nowadays, if I consider that there is a certain part of the code that can be interpreted in isolation, then chances are I would move that to its own function. Not necessarily because it will be used somewhere else and I would like to avoid repeating code, but to use it as an opportunity to describe what that piece of code does in the name of the function itself. And, given that this function will be called instead of just the whole block means that we reduce the <em>cognitive load</em> of the engineering reading the code block where this new function is being executed (something that everyone, including your future self, would appreciate).</p>
+
+<p>There are two important ideas I mentioned there. First, the <a href="https://en.wikipedia.org/wiki/Don%27t_repeat_yourself">DRY principle</a>, or “dont repeat yourself”, which encompass a lot more than what its relevant here, but which idea focus on the fact that, if some logic needs to be changed, updated or modified, we should only need to do so in one place, and not in any other, irrelevant place. So the idea of writing code in a way that we reuse things isn’t because each character costs money like old texting messages used to, but to, once again, make it easier for others and our future selves to maintain things. Don’t be short sighted and put the effort to make it worth it in the long run, but also don’t over-engineer stuff and follow the <a href="https://en.wikipedia.org/wiki/KISS_principle">KISS</a> principle, or “keep it simple, stupid”. Yes, software engineering is complicated, and has a lot of acronyms?</p>
+
+<p>If you don’t care a lot for your mental and physical well-being, you can spot some parts of the code in this project that could have easily been moved into functions to avoid repeating their implementations, like <a href="https://github.com/originalnicodr/SteamLevelCalculator/blob/88b7b5403b8496ec61a83d5110c2ca014c683684/Calculadora%20de%20niveles/MainForm.cs#L308-L327">when calculating the levels based on the given experience number</a>. A function encapsulating that would have been way cleaner.</p>
+
+<p>The other important concept that I briefly hinted at and want to highlight is the idea behind “code that can be interpreted in isolation” and “encapsulation”, which is somewhat linked with <a href="https://en.wikipedia.org/wiki/Single-responsibility_principle">Parna’s single responsibility principle</a>. Such a term represents the idea that one “module” (whatever you want to associate with that) should only cover a single responsibility, representing a single idea. In doing so, it means that if we do changes relevant to X, then we know that the only affected behaviour is X, and therefore there is no need to test Y and Z. This is a very powerful concept that has helped me make clearer designs over the years, and certainly helps out to wrap your head around in codebases that you are not experienced in if they have been written with this idea in mind.</p>
+
+<p>It is funny, however, how one of the definitions of this principle goes as “Gather together the things that change for the same reasons. Separate those things that change for different reasons”, which seems so obvious that it’s borderline dumb to point out how this is just common sense. However, like we have been discussing until this point, and by looking at the code of the project here, common sense hardly comes by without it being actively thought about and putting in the mental training effort.</p>
+
+<p>I guess it’s still worth mentioning <strong>when</strong> doing this logic separation in functions can be decremental. When you do a function call in a computer, the processor needs to know where to come back after finishing executing your new, nicely encapsulated function, so it creates a reference in the stack so that when the instruction pointer reads it, it can return to the immediate exterior function (aka where the function you just finished executing was called from). This might not seem like a very big deal on its own, but it can become a problem when there are a lot of nested function calls (most of the time coming from a lot of <a href="https://en.wikipedia.org/wiki/Recursion_(computer_science)">recursion</a> calls, computer science favorite mascot) because we have to save the parameters, local variables, and return addresses for each function call in the stack. And over multiple calls, it, well, stacks.</p>
+
+<p>Like with a lot of historical problems in software engineering, it is unlikely that you will encounter this limitation in your work, unless you work in applications with heavy use of the processor, or with limited hardware, like in embedded systems (this is yet another warning to not go there). So even if it’s useful to know how a computer works at a low level, do not, and I repeat, do not design your software with this in mind unless you can assert it is a limitation that you have no other choice but consider it. My memory is fuzzy now, so you would have to forgive me for forgetting the original author from whom I read this idea, but the longer you design your software for technical limitations, the more immutable it becomes, and making changes becomes harder and harder (which might be one of the hardest primitive problems you can deal with in a codebase). Therefore, listen to our buddy Donald Knuth and his “Premature optimization is the root of all evil” take and only attempt to adapt to hardware limitations when you absolutely need to.</p>
+
+<p>This of course, doesn’t mean that you should write your code in a non optimal way memory and processing wise, but to know that there are other, <a href="https://en.wikipedia.org/wiki/Non-functional_requirement">non-functional characteristics</a> that also affect what is understood about code quality that should also be considered depending on the context and requirements, like maintainability, readability, portability, security, etc. If you want to learn more about it, you can find more of this in Diomidis Spinelli’s book “Code Quality”.</p>
+
+<p>At the end of the day, the conclusion I have reached myself surrounding this is that, more often than not, good software engineering means good modularization. Being able to take a piece of code and write tests on it by injecting its necessary dependencies without much trouble reflects most of the principles that I have talked about here, and is a good indication that you are on the right path. Which in turn reduces friction when making changes, and what is the life of a software but constant change?</p>
+
+<h1 id="the-magic-of-numbers-and-the-one-code-statement-which-must-not-be-named">The magic of numbers and the one code statement which-must-not-be-named</h1>
+
+<p>Another thing I spotted in my archaeology work here is how many <a href="https://en.wikipedia.org/wiki/Magic_number_(programming)">“magic numbers”</a> there are. I mentioned how good code tends to be “self-documented”, but the thing is, some implementations aren’t intuitive, nor make much sense when seen at first sight (specially if they have been optimized to death to what feels like obfuscated code). These are the places where a comment explaining the rationale behind an implementation is worth doing. The rule of thumb around this is trying to minimize the amount of comments with good names, and docstrings if necessary, but if there isn’t a simple, concise way of explaining why we are doing something, then a comment is probably necessary (if it doesn’t happen to also be a signal that that piece needs <a href="https://en.wikipedia.org/wiki/Code_refactoring">refactoring</a>).</p>
+
+<p>Tied into that, there are multiple shameful <a href="https://github.com/originalnicodr/SteamLevelCalculator/blob/main/Calculadora%20de%20niveles/MainForm.cs#L311">edge cases</a> that would have been caught correctly with a proper implementation in the first try without having to explicitly handle them in here. Granted, there is indeed an overarching philosophy in computer science and software engineering against the use of “ifs” if possible. The former argues that there might be a design or model that would incorporate the edge case within its implementation, like a correct catch ‘em all model that properly represents the problem. And this use of “ifs” is more strongly discouraged by functional languages such as Haskell to push the idea of code that can be reasoned mathematically. The <a href="https://www.defusetheifstrategy.com/">latter instead claims</a> that having “too many ifs” could be a symptom of bad architectural design and result in a lack of robustness in the future. And a lot of thought that goes into design patterns and OOP in general aims at reducing the amount of conditionals in your code.</p>
+
+<p>And I can sympathize with both really. Reaching a mathematical model that feels correct and elegant is super rewarding as someone with a heavy math background, and coming up with good architectural design feels very empowering, like you are giving your best to secure a “safe” future of sorts. However, like any doctrines that I have presented so far, it should not, by any means, be taken to the extreme and attempt to achieve a codebase with zero ifs, because:</p>
+
+<ul>
+  <li>1: Overengineered solutions can be even more damaging than trying to avoid designs with ifs, and</li>
+  <li>2: Does it really make sense to spend the necessary time to achieve a model that satisfies our ego instead of doing something that works? So we can continue taking care of other project necessities.</li>
+</ul>
+
+<p>Those two points are more related than what appears at first sight, but that doesn’t make them any easier to deal with. It’s a fine line to walk for sure, how much design thought is worth for future proofness of the project, and how much is it for our own pleasure. It’s something that any engineer has to deal with on their own accord, and it’s definitely something I am still working on myself.</p>
+
+<p>I do have to admit that my math background in high school, despite enjoying the subject very much, wasn’t that great, especially in its usage in software development. So when I was reading the code of this project, my astonishment was inversely proportional to my disdain when finding out that I was doing loops to calculate how many showcase pieces the user would get based on a level increase instead of… dividing by 10.</p>
+
+<p>Well, not exactly, it would have been something like:</p>
+<div class="language-c# highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="n">old_showcases_number</span> <span class="p">=</span> <span class="n">old_level</span> <span class="p">/</span> <span class="m">10</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">new_showcases_number</span> <span class="p">=</span> <span class="n">new_level</span> <span class="p">/</span> <span class="m">10</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">gained_showcases</span> <span class="p">=</span> <span class="n">new_showcases_number</span> <span class="p">-</span> <span class="n">old_showcases_number</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>It is reassuring to know that my math and logical skills have improved since my last year of high school, for sure.</p>
+
+<p>However, there is another thing to consider here, and that is that for/while loops can be quite problematic in UI applications. If we happen to slow and/or freeze the main thread with a loop that is either taking too long or whose condition never becomes false makes for a very bad user experience. So if you can avoid those and instead come up with more “functional-oriented” solutions, that would certainly help.</p>
+
+<h1 id="ram-vs-processor-usage-the-derby-of-a-century">Ram vs. Processor usage, the derby of a century</h1>
+<p>Another thing that I spotted was how lazy I was when reporting errors. What if the user introduced a float number in a place where only ints are allowed, or worse, a string? Instead of being granular regarding where the problem was, I tended to just report that something happened and that the user should check the values they input themselves. Which, you know, is fine; it’s not the end of the world. But it’s definitely something I would do differently if I were to write something like this today.</p>
+
+<p>I also spotted how, when needing to return a string that was going to be displayed in the UI, I would calculate the necessary values like right inside the string, which made the whole string literal kinda awkward to read from the source code. Moving that onto a variable would have made more sense clarity-wise.</p>
+
+<p>It wasn’t such an outrageous problem here, but most of the time, it’s a good idea to create local variables (or constants) to add meaning to the way we are doing things, similarly to how we deal with moving behaviour to auxiliary functions. Nowadays, memory is so cheap that it doesn’t make sense to NOT save local variables when doing so adds clarity, or makes for an outright better implementation.</p>
+
+<p>This is even more important in loops (and even more so on sensitive loops that run multiple times per second or frame, like <code class="language-plaintext highlighter-rouge">Update()</code> functions in game engines), if there is a value that you can save in a variable before it to avoid recalculating it every iteration, it’s considered good practice to do so.</p>
+
+<p>Knowing low level architecture, despite not working with limited hardware or memory/processing intensive applications, can still be useful to help you make the right choices™ more often than not unconsciously, without thinking actively about these limits. And, if you happen to work in a field where these things are important, then even more reason to be aware of this. This rabbit hole can go as deep as you like. If you are interested in reading how games handle some intensive processing problems, I suggest reading about <a href="https://en.wikipedia.org/wiki/Data-oriented_design">Data Oriented Design</a>, it’s super interesting.</p>
+
+<h1 id="novel-writers-can-make-for-some-novel-programming">Novel writers can make for some novel programming</h1>
+
+<p>One of the funniest things I spotted in the code of this project was multiple while statements that just had a return call inside of them. That is, they were being used as simple “if”s statements. I have no idea what I was up to back then, but oh man, did I not know what I was doing. And the worst thing is, I entered the first year of college in that state, being fully confident of my programming capabilities. Makes me question how decent of an engineer I currently am actually. I hope that I can at least acknowledge my blind spots nowadays.</p>
+
+<p>I also spotted <code class="language-plaintext highlighter-rouge">(int)badges!=badges</code> more than once, which must be the ugliest way to check if a number doesn’t have a floating part that I have ever seen. Interestingly enough, though, I have seen it written properly elsewhere, so it means that, back then at some point, I realized that can be improved and started writing it correctly afterwards, but didn’t have the resilience to go back and fix where I wrote this previous atrocity. Iterating and constantly reviewing one’s own implementations is a very important aspect of the process to make sure your output is the best it can be. Reviewing something that you yourself wrote as if someone else did not only helps you out seeing your code with new eyes and wearing the same “hat” that you wore when reviewing others’ work, but it also helps you separate yourself emotionally from your code.</p>
+
+<p>Being able to not get attached to your own creations must be one of the most important skills to acquire, not only in software engineering but I would argue any creative field (the relationship between creativity and engineering is super close, but don’t let the former overshadow the latter), to the point that it has earned its own term with “<a href="https://en.wiktionary.org/wiki/kill_one%27s_darlings">kill your darlings</a>” in the writing field. If you get a review saying that you overlooked something in your implementation and are, therefore, suggested to refactor it all to attend to this new, more fitting design, you shouldn’t get frustrated. We are all here for the purpose of the project, and if our egos get in the way of reaching the best version of it, then we should put it aside and open ourselves to learning. And if ego is something you have a hard time dealing with, think of this process and the suggestions you get as a way for you to get better and be able to justify <del>having your head up on your ass</del> your position as a professional. The best places I have worked in pushed for people to give feedback, not only codewise, but also about processes. And I can assure you, if you are good at receiving and giving feedback, people will love to work with you.</p>
+
+<p>Doing an introspection of not only your processes and way of working, but also of the team and company are super important to polish them and help everyone deliver better code faster while also being less frustrated. But I will refrain from talking more about improving processes in such an abstract way, as I am starting to sound like your typical LinkedIn post.</p>
+
+<h1 id="linters-the-engineers-anti-anxiety-pill">Linters, the engineer’s anti-anxiety pill</h1>
+
+<p>Early in this section, I lied to you; the actual first thing I noticed when I first looked at the project’s code was actually the weird, inconsistent indentation. I understand that I was riding the “if it works, don’t touch” principle, but good lord. So much copy-pasting seems to have led to a lot of awkward places everywhere. I wonder if I started to appreciate indentation and readability when I learned Python in my first year at the university.</p>
+
+<p>Nowadays, fortunately, we have <a href="https://en.wikipedia.org/wiki/Lint_(software)">linters</a> that scream at you if you attempted to push something like this to remote, but I have to admit, I hardly ever care about them when working on personal projects. My philosophy has always been, if you just have a couple of free hours each day to work on said projects, then it’s better to work on the projects themselves rather than doing such “meta”, overhead work. However, I realize how mistaken this way of thinking is, but one thing is understanding an idea logically, and another is believing in it emotionally. Hopefully, I can get it right next time.</p>
+
+<p>What is also outrightly striking is the lack of space between characters everywhere. It almost feels like a literature resource to make the reader feel anxious about how cramped everything is like fucking <a href="http://deeblog.squarespace.com/journal/2011/5/29/no-se-culpe-a-nadie.html">Cortazar</a>. This would have also been picked up by the linter, and by any programmer that doesn’t hate themselves.</p>
+
+<p>Another thing that popped up formatting wise was the lack of cohesion or meaning behind whitespaces. Nowadays, I like to follow <a href="https://google.github.io/styleguide/cppguide.html#Vertical_Whitespace">Google C++ guidelines</a> as a rule of thumb, which I guess can be summed up as including whitespaces to separate code blocks that have a logical separation between them that justifies separating them visually.</p>
+
+<p>It might seem obvious when you read it, but if you don’t think explicitly about it ever, maybe you will never start using them consciously. And once again, good practices seem so tied to common sense that they make you question how much common sense you have in the first place.</p>
+
+<h1 id="input-gates-variable-declaration-etiquette-and-the-pertinences-of-ux">Input gates, variable declaration etiquette, and the pertinences of UX</h1>
+
+<p>Another minor thing I realized was the number of times I was filtering inputs redundantly. Of course, the project itself has a serious problem of, well, everything. But delimiting sections in your execution flow where we filter out non correct inputs at the start gives us the certainty that the user input is correct in later parts of the execution flow as part of the prerequisites. If you want to keep reading about this, you can look up <a href="https://en.wikipedia.org/wiki/Design_by_contract">Design by Contract</a> vs <a href="https://en.wikipedia.org/wiki/Defensive_programming">Defensive Programming</a>.</p>
+
+<p>One minor thing I didn’t bring up earlier is how all of those global variables were all declared in the same line, which is badly seen in pretty much any kind of programming? With the exception being variables that are very closely related, like <code class="language-plaintext highlighter-rouge">float coord_x, coord_y</code> to represent coordinates in a 2D plane. But even so, maybe having a single variable like a tuple or a vector2 would be better.</p>
+
+<p>Version control te da la flexibilidad de hacer tales cambios sin miedo a romper cosas.
+Another thing that was very noticeable was the amount of commented code that is around. I imagine this is because I was fearing making changes that would cause a <a href="https://en.wikipedia.org/wiki/Software_regression">regression</a>. You do have to realize that back then, I didn’t even know what version control was, which would have helped quite a bit with that insecurity. I already mentioned how I couldn’t do any work nowadays without it, and seeing this from 10 years ago cements my position.</p>
+
+<p>I will cut 18 yo Nico some slack tho. It surprised me how, back then, I handled the “plurality” when returning the strings for the user to read on the calculator, by modifying this string depending if the sentence referred to one or multiple obtained showcases. If nothing, it shows past Nico’s dedication to the user experience, or at least to the extent he knew how to control. I will say, however, that it could have been implemented better to <a href="https://github.com/originalnicodr/SteamLevelCalculator/blob/main/Calculadora%20de%20niveles/MainForm.cs#L363-L370">not repeat the whole string in the two cases involved in the if block</a>.</p>
+
+<hr />
+
+<p>And that’s pretty much all of the notes I had about the code itself. Thanks for sticking around until the end! I hope your sanity didn’t go to shite as mine did.</p>
+
+<p>Join me for the third part, in which I will be talking about how the project was received, different conclusions I drew from taking a look at my old smelly code, and further software engineering reading material when I post it in the coming weeks!</p>
+
+<p>Hope you had fun reading this one, see ya!</p>
+
+    </div>
+
+    <div class="post__share">
+  <div class="share__head">
+    <div class="share__title">Share this Post</div>
+  </div>
+  <ul class="share__list list-reset">
+    <li class="share__item">
+      <a class="share__link share__twitter"
+        href="https://twitter.com/intent/tweet?text=10%20years%20of%20code%20smell%20-%20Part%20II:%20Self%20archeology&url=https://originalnicodr.github.io/blog/10-years-of-code-smell-self-archeology"
+        onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
+        title="Share on Twitter" rel="nofollow"><i class="ion ion-logo-twitter"></i></a>
+    </li>
+    <li class="share__item">
+      <a class="share__link share__facebook"
+        href="https://www.facebook.com/sharer/sharer.php?u=https://originalnicodr.github.io/blog/10-years-of-code-smell-self-archeology"
+        onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
+        title="Share on Facebook" rel="nofollow"><i class="ion ion-logo-facebook"></i></a>
+    </li>
+    <li class="share__item">
+      <a class="share__link share__linkedin"
+        href="https://www.linkedin.com/shareArticle?mini=true&url=https://originalnicodr.github.io/blog/10-years-of-code-smell-self-archeology&title=10%20years%20of%20code%20smell%20-%20Part%20II:%20Self%20archeology&summary=The%20common%20sense%20of%20the%20good%20practices,%20and%20the%20horror%20of%20gazing%20into%20your%20old%20code%20so%20long%20that%20it%20gazes%20back.&source=Originalnicodr"
+        onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
+        title="Share on LinkedIn" rel="nofollow"><i class="ion ion-logo-linkedin"></i></a>
+    </li>
+  </ul>
+</div>
+
+    <div id="disqus_thread"></div>
+<script>
+    /**
+    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+    /*
+    var disqus_config = function () {
+    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    */
+    (function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = 'https://originalnicodr.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    
+  </article>
+</div>
+<!-- end post -->
+
+
+
+
+
+
+
+<!-- begin related posts -->
+<div class="container">
+  <section class="related-posts is-related animate">
+    <div class="row">
+      <div class="col col-12">
+        <div class="container__inner">
+          <div class="section__info">
+            <div class="section__head">
+              <h2 class="section__title">You may also like</h2>
+              <a class="section__link" href="/blog">
+                
+                
+                  
+                    <a href="/tag/10-years-of-code-smell" class="section__link related-tag">See all<span> 10-years-of-code-smell</span> <i class="ion ion-md-arrow-forward"></i></a>
+                  
+                
+                  
+                
+              
+              </a>
+            </div>
+          </div>
+          <div class="row">
+
+          
+            
+            
+      
+            
+      
+            
+            
+            
+            
+      
+            
+      
+            
+              <!--bookshop-live name(blog-card/blog-card.jekyll.html) params(post=post) context(post=site.posts[1]) -->
+          
+<div class="c-blog-card col col-4 col-d-6 col-t-12">
+  <div class="c-blog-card__inner">
+
+    
+    <div class="c-blog-card__image-wrap">
+      <a class="c-blog-card__image" href="/blog/10-years-of-code-smell-falling-for-cs">
+        <img loading="lazy" src="/images/blog/10-years-of-code-smell-falling-for-cs.jpg" alt="10 years of code smell - Part I: Falling for CS">
+      </a>
+    </div>
+    
+
+    <div class="c-blog-card__content">
+
+      
+      <div class="c-blog-card__tags-box">
+        
+        <a href="/tag/10-years-of-code-smell" class="c-blog-card__tag">10-years-of-code-smell</a>
+        
+        <a href="/tag/project" class="c-blog-card__tag">project</a>
+        
+      </div>
+      
+
+      <h2 class="c-blog-card__title">
+        <a href="/blog/10-years-of-code-smell-falling-for-cs">10 years of code smell - Part I: Falling for CS</a>
+      </h2>
+
+      <p class="c-blog-card__excerpt">
+        The advantages (and disadvantages) of computer science education and work, the magic of creating something out of nothing, and how I learned to stop worrying and love the code.
+      </p>
+
+      <div class="c-blog-card__meta">
+
+        
+<span class="reading-time" title="Estimated read time">
+  
+
+  
+    22 minute-read
+  
+</span>
+
+        <span class="date"><time datetime="2026-04-12T00:00:00+00:00">12 Apr 2026</time></span>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+          <!--bookshop-live end-->
+            
+                
+              
+            
+            
+            
+      
+            
+      
+            
+            
+            
+            
+      
+            
+      
+            
+            
+            
+            
+      
+            
+      
+            
+            
+            
+            
+      
+            
+      
+            
+            
+            
+            
+      
+            
+      
+            
+            
+            
+            
+      
+            
+      
+            
+            
+            
+            
+      
+            
+      
+            
+            
+            
+            
+      
+            
+      
+            
+            
+            
+            
+      
+            
+      
+            
+            
+            
+            
+      
+            
+      
+            
+            
+            
+            
+      
+            
+      
+            
+            
+            
+            
+      
+            
+      
+            
+            
+            
+            
+      
+            
+      
+            
+            
+            
+            
+      
+            
+      
+            
+            
+            
+            
+      
+            
+      
+            
+            
+            
+            
+      
+            
+      
+            
+            
+            
+            
+      
+            
+      
+            
+            
+            
+            
+      
+            
+      
+            
+            
+            
+            
+      
+            
+      
+            
+            
+            
+            
+      
+            
+      
+            
+            
+            
+            
+      
+            
+      
+            
+            
+            
+            
+      
+            
+      
+            
+            
+            
+            
+      
+            
+      
+            
+            
+            
+            
+      
+            
+      
+            
+            
+            
+            
+      
+            
+      
+            
+            
+            
+            
+      
+            
+      
+            
+            
+            
+            
+      
+            
+      
+            
+            
+            
+            
+      
+            
+      
+            
+            
+            
+            
+      
+            
+      
+            
+            
+            
+            
+      
+            
+      
+            
+            
+            
+            
+      
+            
+      
+            
+            
+            
+            
+      
+            
+      
+            
+            
+            
+            
+      
+            
+      
+            
+            
+            
+            
+      
+            
+      
+            
+            
+            
+            
+      
+            
+      
+            
+            
+            
+            
+      
+            
+      
+            
+            
+            
+            
+      
+            
+      
+            
+            
+            
+            
+      
+            
+      
+            
+            
+            
+            
+      
+            
+      
+            
+            
+            
+            
+      
+            
+      
+            
+            
+            
+            
+      
+            
+      
+            
+            
+            
+            
+      
+            
+      
+            
+            
+            
+            
+      
+            
+      
+            
+            
+            
+            
+      
+            
+      
+            
+            
+            
+            
+      
+            
+      
+            
+              <!--bookshop-live name(blog-card/blog-card.jekyll.html) params(post=post) context(post=site.posts[46]) -->
+          
+<div class="c-blog-card col col-4 col-d-6 col-t-12">
+  <div class="c-blog-card__inner">
+
+    
+    <div class="c-blog-card__image-wrap">
+      <a class="c-blog-card__image" href="/blog/how-to-create-and-host-your-own-portfolio-for-free">
+        <img loading="lazy" src="/images/blog/post-2.jpg" alt="How to create and host your own portfolio for free">
+      </a>
+    </div>
+    
+
+    <div class="c-blog-card__content">
+
+      
+      <div class="c-blog-card__tags-box">
+        
+        <a href="/tag/project" class="c-blog-card__tag">project</a>
+        
+        <a href="/tag/virtual-photography" class="c-blog-card__tag">virtual-photography</a>
+        
+      </div>
+      
+
+      <h2 class="c-blog-card__title">
+        <a href="/blog/how-to-create-and-host-your-own-portfolio-for-free">How to create and host your own portfolio for free</a>
+      </h2>
+
+      <p class="c-blog-card__excerpt">
+        Need a website in which to show your work, have total control over it, and don't have to pay anything to make or host (besides your sanity)? Say no more!
+      </p>
+
+      <div class="c-blog-card__meta">
+
+        
+<span class="reading-time" title="Estimated read time">
+  
+
+  
+    27 minute-read
+  
+</span>
+
+        <span class="date"><time datetime="2023-02-06T00:00:00+00:00">06 Feb 2023</time></span>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+          <!--bookshop-live end-->
+            
+                
+              
+            
+            
+            
+      
+            
+      
+            
+            
+            
+            
+      
+            
+      
+            
+            
+            
+            
+      
+            
+      
+            
+            
+            
+            
+      
+            
+      
+            
+            
+            
+            
+      
+            
+      
+            
+            
+            
+            
+      
+            
+      
+            
+            
+            
+            
+      
+            
+      
+            
+            
+            
+            
+      
+            
+      
+            
+            
+            
+            
+      
+            
+      
+            
+            
+            
+            
+      
+            
+      
+            
+            
+            
+            
+      
+            
+      
+            
+            
+            
+            
+      
+            
+      
+            
+            
+            
+            
+      
+            
+      
+            
+            
+            
+            
+      
+            
+      
+            
+            
+            
+            
+      
+            
+      
+            
+            
+            
+            
+      
+            
+      
+            
+            
+            
+            
+      
+            
+      
+            
+            
+            
+            
+      
+            
+      
+            
+            
+            
+            
+      
+            
+      
+            
+            
+            
+            
+      
+            
+      
+            
+            
+            
+            
+      
+            
+      
+            
+            
+            
+            
+      
+            
+      
+            
+            
+            
+            
+      
+            
+      
+            
+            
+            
+            
+      
+            
+      
+            
+            
+            
+            
+      
+            
+      
+            
+            
+            
+            
+      
+            
+      
+            
+            
+            
+            
+      
+            
+      
+            
+            
+            
+            
+      
+            
+      
+            
+            
+            
+            
+      
+            
+      
+            
+            
+            
+            
+      
+            
+      
+            
+            
+            
+            
+      
+            
+      
+            
+            
+            
+            
+      
+            
+      
+            
+            
+            
+            
+      
+            
+      
+            
+            
+            
+            
+      
+            
+      
+            
+              <!--bookshop-live name(blog-card/blog-card.jekyll.html) params(post=post) context(post=site.posts[80]) -->
+          
+<div class="c-blog-card col col-4 col-d-6 col-t-12">
+  <div class="c-blog-card__inner">
+
+    
+    <div class="c-blog-card__image-wrap">
+      <a class="c-blog-card__image" href="/blog/how-we-made-a-high-quality-image-gallery-without-paying-a-single-dime">
+        <img loading="lazy" src="/images/blog/post-1.jpg" alt="How we made a high quality image gallery without paying a single dime">
+      </a>
+    </div>
+    
+
+    <div class="c-blog-card__content">
+
+      
+      <div class="c-blog-card__tags-box">
+        
+        <a href="/tag/programming" class="c-blog-card__tag">programming</a>
+        
+        <a href="/tag/project" class="c-blog-card__tag">project</a>
+        
+        <a href="/tag/virtual-photography" class="c-blog-card__tag">virtual-photography</a>
+        
+      </div>
+      
+
+      <h2 class="c-blog-card__title">
+        <a href="/blog/how-we-made-a-high-quality-image-gallery-without-paying-a-single-dime">How we made a high quality image gallery without paying a single dime</a>
+      </h2>
+
+      <p class="c-blog-card__excerpt">
+        A dive into how the poor man's necessity sharpens one's problem solving ability (or how we took advantage of multiple million dollar companies' free services).
+      </p>
+
+      <div class="c-blog-card__meta">
+
+        
+<span class="reading-time" title="Estimated read time">
+  
+
+  
+    20 minute-read
+  
+</span>
+
+        <span class="date"><time datetime="2021-09-18T00:00:00+00:00">18 Sep 2021</time></span>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+          <!--bookshop-live end-->
+            
+                
+                  
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+<!-- end related posts -->
+
+
+
+    <!-- 
+        Bookshop components are accessed using the bookshop tag, 
+        using the same syntax as the standard Jekyll include tag.
+    -->
+    <!--bookshop-live name(page.jekyll.html) params(content_blocks=page.content_blocks page_theme=page.page_theme) context() -->
+          
+          <!--bookshop-live end-->
+
+    <div class="top" title="Top"><i class="ion ion-ios-arrow-up"></i></div>
+
+    <!-- begin footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col col-12">
+
+        <!--bookshop-live name(social-link.jekyll.html) params() context() -->
+          
+<div class="social">
+  <ul class="social__list list-reset">
+    
+    <li class="social__item">
+      <a class="social__link" href="https://twitter.com/originalnicodr" target="_blank" rel="noopener" aria-label="twitter icon"><i class="ion ion-logo-twitter"></i></a>
+    </li>
+    
+    <li class="social__item">
+      <a class="social__link" href="https://github.com/originalnicodr" target="_blank" rel="noopener" aria-label="github icon"><i class="ion ion-logo-github"></i></a>
+    </li>
+    
+    <li class="social__item">
+      <a class="social__link" href="https://www.linkedin.com/in/nicol%C3%A1s-uriel-navall-b38022174/" target="_blank" rel="noopener" aria-label="linkedin icon"><i class="ion ion-logo-linkedin"></i></a>
+    </li>
+    
+    <li class="social__item">
+      <a class="social__link" href="mailto:niconavall@gmail.com" target="_blank" rel="noopener" aria-label="icon"><i class="ion ion-md-mail"></i></a>
+    </li>
+  </ul>
+</div>
+
+          <!--bookshop-live end-->
+
+        <ul class="footer_nav list-reset">
+          
+          <li class="footer_nav__item">
+            <a href="/" class="footer_nav__link">Home</a>
+          </li>
+          
+          <li class="footer_nav__item">
+            <a href="/blog/" class="footer_nav__link">Blog</a>
+          </li>
+          
+          <li class="footer_nav__item">
+            <a href="/projects/" class="footer_nav__link">Projects</a>
+          </li>
+          
+          <li class="footer_nav__item">
+            <a href="/virtual-photography/" class="footer_nav__link">Virtual Photography</a>
+          </li>
+          
+          <li class="footer_nav__item">
+            <a href="/about/" class="footer_nav__link">About</a>
+          </li>
+          
+        </ul>
+
+        <div class="copyright"><p>Made with <i class="ion ion-md-heart"></i> and Jekyll.</p> <p>Template by <a href="https://cloudcannon.com/">CloudCannon</a>.</p></div>
+
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- end footer -->
+
+    <!--
+        load the live component for CloudCannon live previews.
+    -->
+    <script>
+(function(){
+  const bookshopLiveSetup = (CloudCannon) => {
+    CloudCannon.enableEvents();
+
+    const head = document.querySelector('head');
+    const script = document.createElement('script');
+    script.src = `/_cloudcannon/bookshop-live.js`;
+    script.onload = function() {
+      window.bookshopLive = new window.BookshopLive({
+        remoteGlobals: ['/_cloudcannon/bookshop-site-data.json']
+      });
+      const updateBookshopLive = async () => {
+        const frontMatter = await CloudCannon.value();
+        const options = window.bookshopLiveOptions || {};
+        await window.bookshopLive.update({page: frontMatter}, options);
+        CloudCannon?.refreshInterface?.();
+      }
+      document.addEventListener('cloudcannon:update', updateBookshopLive);
+      updateBookshopLive();
+    }
+    head.appendChild(script);
+  }
+
+  document.addEventListener('cloudcannon:load', function (e) {
+    bookshopLiveSetup(e.detail.CloudCannon);
+  });
+})();
+</script>
+
+    <script src="/js/scripts.js"></script>
+    <script src="/js/common.js"></script>
+    <script src="/js/spoiler-tag.js"></script>
+    <style>
+    #cookie-notice {
+        display: none;
+        text-align: center;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        background-color: var(--color-bg);
+        color: var(--color-text);
+        box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+        border-top: 1px solid var(--color-border);
+        backdrop-filter: blur(10px);
+        line-height: 3;
+    }
+    #cookie-notice span {
+        margin-right: 1rem;
+        padding: 0 1rem;
+        max-width: calc(100% - 240px);
+        display: inline-block;
+        white-space: normal;
+        vertical-align: middle;
+    }
+    #cookie-notice a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        margin: 0 0.25rem;
+        padding: 0 1.5rem;
+        border-radius: 4px;
+        text-decoration: none;
+        transition: all 0.2s ease;
+        font-weight: 600;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        height: 36px;
+        min-width: 100px;
+        background-color: white;
+    }
+    #cookie-notice a:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    }
+    #cookie-notice a.accept {
+        background-color: white;
+        border: 3px solid var(--color-accent);
+        color: var(--color-accent);
+        font-weight: 800;
+    }
+    #cookie-notice a.accept:hover {
+        border-color: var(--color-accent);
+        color: var(--color-accent);
+    }
+    #cookie-notice a.decline {
+        background-color: white;
+        border: 2px solid var(--color-border);
+        color: var(--color-text);
+    }
+    #cookie-notice a.decline:hover {
+        border-color: var(--color-accent);
+        color: var(--color-accent);
+    }
+    @media (max-width: 767px) {
+        #cookie-notice {
+            line-height: normal;
+            padding: 0.75rem 0.5rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        #cookie-notice span {
+            display: block;
+            margin: 0;
+            text-align: center;
+            font-size: 0.9em;
+            padding: 0 0.5rem;
+            max-width: 100%;
+            flex: 1 1 100%;
+            margin-bottom: 0.5rem;
+        }
+        #cookie-notice a {
+            margin: 0 0.25rem;
+            padding: 0 1rem;
+            height: 32px;
+            min-width: 80px;
+            font-size: 0.9em;
+            flex: 0 0 auto;
+        }
+    }
+</style>
+
+<div id="cookie-notice">
+    <span>We would like to use third party cookies and scripts to improve the functionality of this website.</span>
+    <a id="cookie-notice-accept" class="accept">Approve</a>
+    <a id="cookie-notice-decline" class="decline">Decline</a>
+</div>
+
+<script>
+    function createCookie(name, value, months) {
+        var expires = "";
+        if (months) {
+            var date = new Date();
+            date.setMonth(date.getMonth() + months);
+            expires = "; expires=" + date.toUTCString();
+        }
+        document.cookie = name + "=" + value + expires + "; path=/";
+    }
+
+    function readCookie(name) {
+        var nameEQ = name + "=";
+        var ca = document.cookie.split(';');
+        for (var i=0;i < ca.length;i++) {
+            var c = ca[i];
+            while (c.charAt(0)==' ') c = c.substring(1,c.length);
+            if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+        }
+        return null;
+    }
+
+    function eraseCookie(name) {
+        createCookie(name,"",-1);
+    }
+
+    // Initialize the cookie notice
+    window.addEventListener('load', function() {
+        var cookieValue = readCookie('cookie-notice-dismissed');
+
+        if (cookieValue === 'true') {
+            var allowedDomain = 'originalnicodr.github.io';
+var gaID = 'G-DRR1CQZJM0';
+
+// Check if the current hostname matches the allowed domain, to block forks from reporting to my analytics
+if (window.location.hostname === allowedDomain) {
+  var gaScript = document.createElement('script');
+  gaScript.async = true;
+  gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=' + gaID;
+  document.head.appendChild(gaScript);
+
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', gaID);
+}
+
+        }
+
+        if (cookieValue === null) {
+            var notice = document.getElementById('cookie-notice');
+            if(notice) {
+                notice.style.display = 'block';
+            }
+        }
+    });
+
+    document.getElementById('cookie-notice-accept').addEventListener("click", function() {
+        createCookie('cookie-notice-dismissed', 'true', 6); // 6 months
+        document.getElementById('cookie-notice').style.display = 'none';
+        location.reload();
+    });
+    
+    document.getElementById('cookie-notice-decline').addEventListener("click", function() {
+        createCookie('cookie-notice-dismissed', 'false', 1); // 1 month
+        document.getElementById('cookie-notice').style.display = 'none';
+    });
+
+</script>
+
+</body>
+</html>
