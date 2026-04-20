@@ -96,6 +96,6 @@ Absolutely take this with a grain of salt, but despite its problems, the number 
 
 <hr>
 
-The second part of this series, in which we discuss how bad the code from this old project of mine is and how things should have gone instead, will be posted at a later date.
+You can find the second part of this series, in which we discuss how bad the code from this old project of mine is and how things should have gone instead, [here](./10-years-of-code-smell-self-archeology).
 
 Hope you enjoyed reading this one! Have a good one.
