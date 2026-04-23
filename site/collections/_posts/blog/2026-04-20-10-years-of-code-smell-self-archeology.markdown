@@ -114,7 +114,6 @@ It is reassuring to know that my math and logical skills have improved since my 
 
 However, there is another thing to consider here, and that is that for/while loops can be quite problematic in UI applications. If we happen to slow and/or freeze the main thread with a loop that is either taking too long or whose condition never becomes false makes for a very bad user experience. So if you can avoid those and instead come up with more “functional-oriented” solutions, that would certainly help.
 
-
 # Ram vs. Processor usage, the derby of a century
 Another thing that I spotted was how lazy I was when reporting errors. What if the user introduced a float number in a place where only ints are allowed, or worse, a string? Instead of being granular regarding where the problem was, I tended to just report that something happened and that the user should check the values they input themselves. Which, you know, is fine; it's not the end of the world. But it's definitely something I would do differently if I were to write something like this today.
 
@@ -154,7 +153,6 @@ Another minor thing I realized was the number of times I was filtering inputs re
 
 One minor thing I didn't bring up earlier is how all of those global variables were all declared in the same line, which is badly seen in pretty much any kind of programming? With the exception being variables that are very closely related, like `float coord_x, coord_y` to represent coordinates in a 2D plane. But even so, maybe having a single variable like a tuple or a vector2 would be better.
 
-Version control te da la flexibilidad de hacer tales cambios sin miedo a romper cosas.
 Another thing that was very noticeable was the amount of commented code that is around. I imagine this is because I was fearing making changes that would cause a [regression](https://en.wikipedia.org/wiki/Software_regression). You do have to realize that back then, I didn't even know what version control was, which would have helped quite a bit with that insecurity. I already mentioned how I couldn't do any work nowadays without it, and seeing this from 10 years ago cements my position.
 
 I will cut 18 yo Nico some slack tho. It surprised me how, back then, I handled the “plurality” when returning the strings for the user to read on the calculator, by modifying this string depending if the sentence referred to one or multiple obtained showcases. If nothing, it shows past Nico's dedication to the user experience, or at least to the extent he knew how to control. I will say, however, that it could have been implemented better to [not repeat the whole string in the two cases involved in the if block](https://github.com/originalnicodr/SteamLevelCalculator/blob/main/Calculadora%20de%20niveles/MainForm.cs#L363-L370).
