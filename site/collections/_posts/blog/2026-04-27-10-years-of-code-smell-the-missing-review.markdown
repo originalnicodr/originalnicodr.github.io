@@ -1,7 +1,7 @@
 ---
 date:   2026-04-27
 title:  "10 years of code smell - Part III: The Missing Review"
-description: Making sense out of this mess, the impact of usefulness, and homework for the reader.
+description: The ugly part of the internet, the impact of usefulness, and this part is left as an exercise for the reader.
 tags:   [10-years-of-code-smell, project]
 image:  '/images/blog/10-years-of-code-smell-the-missing-review.jpg'
 category: blog
@@ -10,7 +10,7 @@ This is the third and final post in a series about revisiting an old project I w
 
 In this post, I explain a bit about the aftermath of the project, some conclusions I reached regarding its implementation, my thoughts on the engineering process, and recommend some further software engineering reading material if you are into that kind of stuff.
 
-# Professionalism and the hostility of the internet
+# Professionalism and the hostility of the interweb
 
 Besides the awful code in Spanish, the whole UI was also in Spanish, because well, I didn't think that english speaking people would be interested. This was only intended to be used by my Spanish-speaking friends and no one else, so when a guy (who previously blocked me for asking him some stuff about Steam profile backgrounds he designed, mind you) asked me if we could work on translating the program together, I was taken aback. Unfortunately, I had to decline as I lost the source code back then, but something I made was useful enough for other people outside my circle to want to use it. I had never had that happen before; it was a nice feeling for sure.
 
