@@ -161,6 +161,6 @@ I will cut 18 yo Nico some slack tho. It surprised me how, back then, I handled 
 
 And that's pretty much all of the notes I had about the code itself. Thanks for sticking around until the end! I hope your sanity didn't go to shite as mine did.
 
-Join me for the third part, in which I will be talking about how the project was received, different conclusions I drew from taking a look at my old smelly code, and further software engineering reading material when I post it in the coming weeks!
+Join me for [the third part of this series](./10-years-of-code-smell-the-missing-review), in which I talk about how the project was received, different conclusions I drew from taking a look at my old smelly code, and further software engineering reading material.
 
 Hope you had fun reading this one, see ya!
