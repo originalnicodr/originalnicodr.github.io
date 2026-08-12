@@ -564,7 +564,7 @@
   /* Project */
   /* Project Navigation */
   /* Virtual Photography Grid */
-  /* Albums List */ /* Posts List */ /* Posts List */ /* Button */ /* Contact Form */ /* Hero */ /* Reviews List */ /* Reviews List */ /* Page Heading */ /* Reviews List */ /* Reviews List */ /* Page Heading */ /* Reviews List */
+  /* Albums List */ /* Posts List */ /* Posts List */ /* Button */ /* Contact Form */ /* Hero */ /* Reviews List */ /* Reviews List */ /* Page Heading */ /* Reviews List */ /* Reviews List */ /* Page Heading */ /* Reviews List */ /* Virtual Photography Random Gallery */
 }
 @media only screen and (max-width: 1300px) {
   .container {
@@ -6076,6 +6076,31 @@
   .article-info .article__date {
     font-size: 12px;
     line-height: 14px;
+  }
+}
+@media all, bookshop {
+  .c-virtual-photography-random-gallery {
+    max-width: 780px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .c-virtual-photography-random-gallery__title {
+    margin: 0;
+    font-size: 44px;
+    line-height: 1.12;
+    padding: 60px 0 20px 0;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .c-virtual-photography-random-gallery__title {
+    font-size: 32px;
+    padding: 40px 0 15px 0;
+  }
+}
+@media only screen and (max-width: 576px) {
+  .c-virtual-photography-random-gallery__title {
+    font-size: 28px;
+    padding: 30px 0 10px 0;
   }
 }
 .about-photo {

@@ -726,6 +726,28 @@
   };
 
   /**
+   * Append more images to the grid, laying out the new rows below the
+   * existing ones and growing the container height to fit. Used to load a
+   * grid in incremental batches instead of all at once.
+   *
+   * @param {array} imageData - Image metadata, in the same format accepted
+   *                            by the Pig constructor.
+   * @returns {object} The Pig instance.
+   */
+  Pig.prototype.addImages = function(imageData) {
+    var startIndex = this.images.length;
+    var newImages = imageData.map(function(data, i) {
+      return new ProgressiveImage(data, startIndex + i, this);
+    }.bind(this));
+
+    this.images = this.images.concat(newImages);
+    this._computeLayout();
+    this._doLayout();
+
+    return this;
+  };
+
+  /**
    * This class manages a single image. It keeps track of the image's height,
    * width, and position in the grid. An instance of this class is associated
    * with a single image figure, which looks like this:
