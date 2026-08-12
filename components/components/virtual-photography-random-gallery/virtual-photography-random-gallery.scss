@@ -1,0 +1,23 @@
+/* Virtual Photography Random Gallery */
+.c-virtual-photography-random-gallery {
+	max-width: 780px;
+	margin: 0 auto;
+	text-align: center;
+
+	&__title {
+		margin: 0;
+		font-size: 44px;
+		line-height: 1.12;
+		padding: 60px 0 20px 0;
+
+		@media only screen and (max-width: $tablet) {
+			font-size: 32px;
+			padding: 40px 0 15px 0;
+		}
+
+		@media only screen and (max-width: $mobile) {
+			font-size: 28px;
+			padding: 30px 0 10px 0;
+		}
+	}
+}

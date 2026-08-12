@@ -1,0 +1,9 @@
+[component]
+structures = [ "content_blocks" ]
+label = "Virtual Photography Random Gallery"
+description = "Shuffled gallery with shots from every album"
+icon = "wysiwyg"
+tags = ["Collections"]
+
+[props]
+title = "The Whole Collection"

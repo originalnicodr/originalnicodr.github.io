@@ -1,0 +1,94 @@
+{% assign c = "c-virtual-photography-random-gallery" %}
+<div class="container">
+  <div class="{{c}}">
+    {% if include.title %}
+      <h2 class="{{c}}__title">{{ include.title }}</h2>
+    {% endif %}
+  </div>
+</div>
+
+<div class="pig-wrapper">
+  <div id="vp-random-gallery-pig"></div>
+</div>
+<script type="text/javascript" src="/js/album/pig.js"></script>
+<script type="text/javascript">
+  var galleryImageData = [
+  {% for album in site.albums %}
+    {% unless album.exclude_from_collage %}
+      {% assign album_images = site.data.virtual-photography[album.slug] %}
+      {% for image in album_images %}
+        {"thumbnail":"{{ image.thumbnail-link }}", "image1080":"{{ image.image1080-link }}", "imageFull":"{{ image.imageFull-link }}", "aspectRatio":{{ image.aspect-ratio }}},
+      {% endfor %}
+    {% endunless %}
+  {% endfor %}
+  ];
+
+  // Fisher-Yates shuffle, re-rolled on every page load
+  for (var i = galleryImageData.length - 1; i > 0; i--) {
+    var j = Math.floor(Math.random() * (i + 1));
+    var tmp = galleryImageData[i];
+    galleryImageData[i] = galleryImageData[j];
+    galleryImageData[j] = tmp;
+  }
+
+  // Images are handed to Pig in small batches instead of all at once, so the
+  // page only grows as tall as what's actually been loaded, rather than
+  // showing a huge scrollbar for the whole collection right away.
+  var GALLERY_CHUNK_SIZE = 12;
+  var galleryLoadedCount = 0;
+
+  function nextGalleryChunk() {
+    var chunk = galleryImageData.slice(galleryLoadedCount, galleryLoadedCount + GALLERY_CHUNK_SIZE);
+    galleryLoadedCount += chunk.length;
+    return chunk;
+  }
+
+  var galleryPig = new Pig(nextGalleryChunk(), {
+    containerId: "vp-random-gallery-pig",
+    urlForSize: function(imageUrls, sizewidth) {
+      if (sizewidth <= 1080){
+        return imageUrls.thumbnail;
+      }
+      else if(sizewidth <= 1920){
+        return imageUrls.image1080;
+      }
+      return imageUrls.imageFull;
+    },
+    addAnchorTag: true,
+    anchorTargetDir: "",
+    anchorClass: "swipebox"
+  }).enable();
+
+  // Top up the very first batch until it fills at least one screen height,
+  // regardless of how tall/wide the shuffled images happen to be.
+  while (galleryLoadedCount < galleryImageData.length && galleryPig.totalHeight < window.innerHeight) {
+    galleryPig.addImages(nextGalleryChunk());
+  }
+
+  // Load further batches only once the user scrolls near the bottom of what's
+  // already rendered, extending the page dynamically instead of upfront.
+  if (galleryLoadedCount < galleryImageData.length) {
+    var gallerySentinel = document.createElement("div");
+    gallerySentinel.id = "vp-random-gallery-sentinel";
+    document.getElementById("vp-random-gallery-pig").insertAdjacentElement("afterend", gallerySentinel);
+
+    var galleryObserver = new IntersectionObserver(function(entries) {
+      if (!entries[0].isIntersecting) {
+        return;
+      }
+
+      galleryPig.addImages(nextGalleryChunk());
+
+      if (galleryLoadedCount >= galleryImageData.length) {
+        galleryObserver.disconnect();
+        gallerySentinel.remove();
+      }
+    }, { rootMargin: window.innerHeight + "px 0px" });
+
+    galleryObserver.observe(gallerySentinel);
+  }
+
+  ;( function( $ ) {
+    $( '.swipebox' ).swipebox();
+  } )( jQuery );
+</script>
