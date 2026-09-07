@@ -2,7 +2,7 @@
 date:   2026-09-06
 title:  "Once Upon a Katamari"
 description: "La dirección evolutiva de una saga que solo sabía crecer, la relación entre el control y el verbo, y el poder de la abstracción mecánica y visual para inferir significado temático."
-tags:   [spoilers]
+tags:   [katamari]
 image:  '/images/reviews/once-upon-a-katamari.jpg'
 category: [el-corgi-pretencioso, juego]
 ---
@@ -89,8 +89,8 @@ Es irónico igual como Takahashi dirigió el primer juego con la idea de consumi
 
 <hr>
 
-Once Upon a Katamari prueba varias cosas con la fórmula clásica. Aunque los power ups no se sientan como el cambio que la serie necesitaba, tener tal variación estética entre niveles como la que cuenta este juego funciona como oportunidad para enfatizar la absurdidad de la saga. Y creo que, en conjunto con el sistema de ranking por nivel, y los incentivos extra para explorar el nivel con la posibilidad de que estos reaccionen y se vean afectados por el accionar del jugador, son las formas en la que la serie debería evolucionar.
+Once Upon a Katamari prueba varias cosas con la fórmula clásica. Aunque los power ups no se sientan como el cambio que la serie necesitaba, tener tal variación estética entre niveles como la que cuenta este juego funciona como oportunidad para enfatizar la absurdidad de la saga. Y creo que, en conjunto con el sistema de ranking, y los incentivos extra para explorar los niveles con la posibilidad de que estos reaccionen y se vean afectados por el accionar del jugador, son las formas en la que la serie debería evolucionar.
 
-Pero si hay algo que valoro de esta entrega es que, a diferencia de las dos anteriores, se anima a intentar avanzar lo que significa ser un juego de Katamari, incluso si dicho movimiento no es hacia adelante sino más bien hacia los costados. E incluso me animaría a decir, entendiendo los problemas con los que estos juegos se estuvieron chocando con el sentido de progresión en sus tramos finales, tal vez moverse hacia los costados sea lo mejor que puede hacer la serie en su posición actual, mecánica y temáticamente hablando.
+Pero si hay algo que valoro de esta entrega es que, a diferencia de las dos anteriores, al menos se atreve a intentar avanzar lo que significa ser un juego de Katamari, incluso si dicho movimiento no es hacia adelante sino más bien hacia los costados. E incluso me animaría a decir, entendiendo los problemas con los que estos juegos se estuvieron chocando con el sentido de progresión en sus tramos finales, tal vez moverse hacia los costados sea lo mejor que puede hacer la serie en su posición actual, mecánica y temáticamente hablando.
 
  
